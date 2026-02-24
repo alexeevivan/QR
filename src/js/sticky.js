@@ -2,6 +2,7 @@
 	init();
 
 	function init() {
+		if (window.innerWidth <= 1024) return;
 		setStickyContainersSize();
 		bindEvents();
 	}

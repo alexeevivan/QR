@@ -114,6 +114,154 @@
 										}
 									}
 								}
+
+								.flip-inner {
+									.flip-face {
+										&.flip-back {
+											.info {
+												&.info--back {
+													.menu-title {
+														margin: calc(var(--index) * 1.5) 0;
+														padding-bottom: calc(var(--index) * 1.5);
+													}
+
+													.menu-scroll-area {
+														.accordion {
+															.accordion-item {
+
+																&.amethyst,
+																&.passion,
+																&.sky-blue,
+																&.rose {
+																	border-bottom: 1px solid transparent;
+																	border-image-slice: 1;
+																}
+
+																&.passion {
+																	border-image: linear-gradient(to right, var(--main-color), #EFE65E) 100% 1;
+																}
+
+																&.rose {
+																	border-image: linear-gradient(to right, var(--main-color), #D3315F) 100% 1;
+																}
+
+																&.sky-blue {
+																	border-image: linear-gradient(to right, var(--main-color), #5AA5CF) 100% 1;
+																}
+
+																&.amethyst {
+																	border-image: linear-gradient(to right, var(--main-color), #9966CC) 100% 1;
+																}
+
+																#accordion-button-1,
+																#accordion-button-2,
+																#accordion-button-3,
+																#accordion-button-4,
+																#accordion-button-5,
+																#accordion-button-6,
+																#accordion-button-7,
+																#accordion-button-8,
+																#accordion-button-9,
+																#accordion-button-10,
+																#accordion-button-11,
+																#accordion-button-12,
+																#accordion-button-13 {
+																	justify-content: space-between !important;
+
+																	.accordion-title {
+																		display: inline-block;
+																		width: 90%;
+																	}
+
+																	.accordion-category {
+																		display: none !important;
+																	}
+																}
+
+																#accordion-button-100,
+																#accordion-button-200,
+																#accordion-button-300 {
+																	span {
+																		text-transform: uppercase;
+																	}
+																}
+
+																#accordion-button-100 {
+																	margin: 0 0 calc(var(--index) * 1.5) 0;
+																}
+
+																#accordion-button-200,
+																#accordion-button-300 {
+																	margin: calc(var(--index) * 1.5) 0;
+																}
+
+																.accordion-content {
+																	&.recipe {
+																		.note {
+																			font-size: .75rem;
+																			text-align: center;
+																		}
+
+																		.cocktail-details {
+																			display: grid;
+																			grid-template-columns: 34% 34% 32%;
+																			font-size: .75rem;
+																			margin: 0 0 1em 0;
+
+																			.ingredients {
+																				display: flex;
+																				flex-direction: column;
+
+																				li {
+																					display: flex;
+
+																					span {
+																						font-size: .75rem;
+																					}
+																				}
+																			}
+
+																			.abv {
+																				text-align: center;
+																				display: flex;
+																				flex-direction: column;
+																				justify-content: space-around;
+
+																				.category {
+
+																					span {}
+																				}
+
+																				.alcohol {
+
+																					span {}
+																				}
+																			}
+
+																			.price {
+																				display: flex;
+																				justify-content: center;
+																				align-items: center;
+
+																				span {}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+
+								.close-flip-btn {
+									&:active {
+										transform: scale(.5);
+									}
+								}
 							}
 						}
 					}
@@ -183,5 +331,49 @@
 				}
 			}
 		}
+	}
+}
+
+@media (max-width: 1024px) {
+
+	/* 1. Отменяем жесткую высоту контейнера, которую ставит JS */
+	.container.content {
+		height: auto !important;
+		display: block;
+	}
+
+	/* 2. Делаем блок обычным (не липким) */
+	.horizontal,
+	.horizontal__pc {
+		position: relative !important;
+		height: auto !important;
+		width: 100%;
+
+		/* 3. ВКЛЮЧАЕМ СВАЙП ПАЛЬЦЕМ */
+		display: flex;
+		overflow-x: auto !important;
+		/* Разрешаем скролл */
+		overflow-y: hidden;
+
+		/* Добавляем инерцию (как в iOS) */
+		-webkit-overflow-scrolling: touch;
+
+		/* Магнитное прилипание (по желанию) */
+		scroll-snap-type: x mandatory;
+	}
+
+	/* 4. Настраиваем карточки */
+	.box,
+	.box__pc {
+		min-width: 85vw;
+		/* Карточка почти во весь экран */
+		height: 70vh;
+		/* Высота поменьше */
+		flex-shrink: 0;
+		/* Чтобы не сжимались */
+
+		scroll-snap-align: center;
+		/* Центрируем при остановке */
+		margin-right: 15px;
 	}
 }

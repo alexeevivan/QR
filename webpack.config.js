@@ -33,14 +33,14 @@ module.exports = {
 	entry: "./js/index.js",
 	output: {
 		filename: "js/[name].[contenthash].js",
-		path: path.resolve(__dirname, "dist"),
+		path: path.resolve(__dirname, "docs"),
 		clean: true,
 	},
 	optimization: optimization(),
 	devtool: isDev ? "source-map" : false,
 	devServer: {
 		static: {
-			directory: path.resolve(__dirname, "dist"),
+			directory: path.resolve(__dirname, "docs"),
 		},
 		host: '0.0.0.0',
 		port: 3000,
@@ -60,7 +60,7 @@ module.exports = {
 			patterns: [
 				{
 					from: path.resolve(__dirname, "src/assets/content"),
-					to: path.resolve(__dirname, "dist/content"),
+					to: path.resolve(__dirname, "docs/content"),
 				},
 			],
 		}),
