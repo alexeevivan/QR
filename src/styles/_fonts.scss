@@ -1,0 +1,271 @@
+@font-face {
+	font-family: "Neon Black";
+	src: url("../assets/fonts/Neon/Neon-Black.eot");
+	src: url("../assets/fonts/Neon/Neon-Black.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-Black.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon Black Italic";
+	src: url("../assets/fonts/Neon/Neon-BlackItalic.eot");
+	src: url("../assets/fonts/Neon/Neon-BlackItalic.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-BlackItalic.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-BlackItalic.woff") format("woff");
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon Bold";
+	src: url("../assets/fonts/Neon/Neon-Bold.eot");
+	src: url("../assets/fonts/Neon/Neon-Bold.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-Bold.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon Bold Italic";
+	src: url("../assets/fonts/Neon/Neon-BoldItalic.eot");
+	src: url("../assets/fonts/Neon/Neon-BoldItalic.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-BoldItalic.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-BoldItalic.woff") format("woff");
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon Bold Outline";
+	src: url("../assets/fonts/Neon/Neon-BoldOutline.eot");
+	src: url("../assets/fonts/Neon/Neon-BoldOutline.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-BoldOutline.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-BoldOutline.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon Extra Bold";
+	src: url("../assets/fonts/Neon/Neon-ExtraBold.eot");
+	src: url("../assets/fonts/Neon/Neon-ExtraBold.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-ExtraBold.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-ExtraBold.woff") format("woff");
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon Extra Bold Italic";
+	src: url("../assets/fonts/Neon/Neon-ExtraBoldItalic.eot");
+	src: url("../assets/fonts/Neon/Neon-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-ExtraBoldItalic.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-ExtraBoldItalic.woff") format("woff");
+	font-weight: 800;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon Heavy";
+	src: url("../assets/fonts/Neon/Neon-Heavy.eot");
+	src: url("../assets/fonts/Neon/Neon-Heavy.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-Heavy.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-Heavy.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon Heavy Italic";
+	src: url("../assets/fonts/Neon/Neon-HeavyItalic.eot");
+	src: url("../assets/fonts/Neon/Neon-HeavyItalic.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-HeavyItalic.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-HeavyItalic.woff") format("woff");
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon Heavy Outline";
+	src: url("../assets/fonts/Neon/Neon-HeavyOutline.eot");
+	src: url("../assets/fonts/Neon/Neon-HeavyOutline.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-HeavyOutline.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-HeavyOutline.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon Italic";
+	src: url("../assets/fonts/Neon/Neon-Italic.eot");
+	src: url("../assets/fonts/Neon/Neon-Italic.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-Italic.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-Italic.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon Italic Outline";
+	src: url("../assets/fonts/Neon/Neon-ItalicOutline.eot");
+	src: url("../assets/fonts/Neon/Neon-ItalicOutline.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-ItalicOutline.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-ItalicOutline.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon";
+	src: url("../assets/fonts/Neon/Neon-Light.eot");
+	src: url("../assets/fonts/Neon/Neon-Light.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-Light.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon";
+	src: url("../assets/fonts/Neon/Neon-LightItalic.eot");
+	src: url("../assets/fonts/Neon/Neon-LightItalic.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-LightItalic.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-LightItalic.woff") format("woff");
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon";
+	src: url("../assets/fonts/Neon/Neon-Medium.eot");
+	src: url("../assets/fonts/Neon/Neon-Medium.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-Medium.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon";
+	src: url("../assets/fonts/Neon/Neon-MediumItalic.eot");
+	src: url("../assets/fonts/Neon/Neon-MediumItalic.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-MediumItalic.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-MediumItalic.woff") format("woff");
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon Outline";
+	src: url("../assets/fonts/Neon/Neon-Outline.eot");
+	src: url("../assets/fonts/Neon/Neon-Outline.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-Outline.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-Outline.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon";
+	src: url("../assets/fonts/Neon/Neon-Regular.eot");
+	src: url("../assets/fonts/Neon/Neon-Regular.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-Regular.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon";
+	src: url("../assets/fonts/Neon/Neon-Thin.eot");
+	src: url("../assets/fonts/Neon/Neon-Thin.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-Thin.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-Thin.woff") format("woff");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neon";
+	src: url("../assets/fonts/Neon/Neon-ThinItalic.eot");
+	src: url("../assets/fonts/Neon/Neon-ThinItalic.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Neon/Neon-ThinItalic.woff2") format("woff2"),
+		url("../assets/fonts/Neon/Neon-ThinItalic.woff") format("woff");
+	font-weight: 100;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "SF Pro Display";
+	src: url("../assets/fonts/SFProDisplay/SFProDisplay-Regular.eot");
+	src: url("../assets/fonts/SFProDisplay/SFProDisplay-Regular.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/SFProDisplay/SFProDisplay-Regular.woff2") format("woff2"),
+		url("../assets/fonts/SFProDisplay/SFProDisplay-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "SF Pro Display";
+	src: url("../assets/fonts/SFProDisplay/SFProDisplay-Light.eot");
+	src: url("../assets/fonts/SFProDisplay/SFProDisplay-Light.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/SFProDisplay/SFProDisplay-Light.woff2") format("woff2"),
+		url("../assets/fonts/SFProDisplay/SFProDisplay-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "SF Pro Display Thin";
+	src: url("../assets/fonts/SFProDisplay/SFProDisplay-Thin.eot");
+	src: url("../assets/fonts/SFProDisplay/SFProDisplay-Thin.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/SFProDisplay/SFProDisplay-Thin.woff2") format("woff2"),
+		url("../assets/fonts/SFProDisplay/SFProDisplay-Thin.woff") format("woff");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "SF Pro Display Ultra-Light";
+	src: url("../assets/fonts/SFProDisplay/SFProDisplay-Ultralight.eot");
+	src: url("../assets/fonts/SFProDisplay/SFProDisplay-Ultralight.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/SFProDisplay/SFProDisplay-Ultralight.woff2") format("woff2"),
+		url("../assets/fonts/SFProDisplay/SFProDisplay-Ultralight.woff") format("woff");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Source HanSerif TC Extra Light";
+	src: url("../assets/fonts/Chinese/SourceHanSerifTC-ExtraLight.otf");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}

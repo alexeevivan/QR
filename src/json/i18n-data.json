@@ -1,0 +1,32 @@
+{
+	"ru": {
+		"greeting-title": "ассортимент",
+		"greeting-description": "меню бара",
+		"content-box-cocktails": "коктейли",
+		"content-box-aperitif": "аперитив",
+		"content-box-wine": "карта вин",
+		"content-box-spirits": "карта вин",
+		"content-box-soft": "безалкогольное",
+		"content-box-cocktails-banner": "первые среди равных"
+	},
+	"en": {
+		"greeting-title": "Bar à la carte",
+		"greeting-description": "Menu description",
+		"content-box-cocktails": "cocktails",
+		"content-box-aperitif": "apéritif",
+		"content-box-wine": "wine list",
+		"content-box-spirits": "spirits",
+		"content-box-soft": "soft drinks",
+		"content-box-cocktails-banner": "primus inter paress"
+	},
+	"zh": {
+		"greeting-title": "酒吧菜单",
+		"greeting-description": "酒吧菜单",
+		"content-box-cocktails": "开胃酒",
+		"content-box-aperitif": "开胃酒",
+		"content-box-wine": "酒水单",
+		"content-box-spirits": "烈酒饮料",
+		"content-box-soft": "软饮料",
+		"content-box-cocktails-banner": "制作非凡的饮料不再是不可能的。.. 因为我们使它成为可能"
+	}
+}
