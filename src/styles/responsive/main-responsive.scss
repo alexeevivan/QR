@@ -16,6 +16,63 @@
 		main {
 
 			.container {
+				&.greeting {
+					.arrow {
+						opacity: 0;
+						position: absolute;
+						left: 50%;
+						bottom: 13%;
+						transform-origin: 50% 50%;
+						transform: translate3d(-50%, -50%, 0);
+					}
+
+					.arrow-first {
+						animation: arrow-movement 2s ease-in-out infinite;
+					}
+
+					.arrow-second {
+						animation: arrow-movement 2s 1s ease-in-out infinite;
+					}
+
+					.arrow:before,
+					.arrow:after {
+						background: var(--main-color);
+						content: '';
+						display: block;
+						height: 2px;
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: calc(var(--index) * 1.5);
+					}
+
+					.arrow:before {
+						transform: rotate(45deg) translateX(-23%);
+						transform-origin: top left;
+					}
+
+					.arrow:after {
+						transform: rotate(-45deg) translateX(23%);
+						transform-origin: top right;
+					}
+
+					// Animation
+					@keyframes arrow-movement {
+						0% {
+							opacity: 0;
+							bottom: 15%;
+						}
+
+						70% {
+							opacity: 1;
+						}
+
+						100% {
+							opacity: 0;
+						}
+					}
+				}
+
 				&.content {
 					.horizontal {
 						&.horizontal__pc {
@@ -196,6 +253,14 @@
 																}
 
 																.accordion-content {
+																	p {
+																		font-size: 0.75rem;
+																	}
+
+																	.accordion-content__category-description {
+																		margin: 0 0 calc(var(--index) * 1.5) 0;
+																	}
+
 																	&.recipe {
 																		.note {
 																			font-size: .75rem;
@@ -204,7 +269,7 @@
 
 																		.cocktail-details {
 																			display: grid;
-																			grid-template-columns: 34% 34% 32%;
+																			grid-template-columns: 60% 20% 20%;
 																			font-size: .75rem;
 																			margin: 0 0 1em 0;
 
@@ -226,24 +291,12 @@
 																				display: flex;
 																				flex-direction: column;
 																				justify-content: space-around;
-
-																				.category {
-
-																					span {}
-																				}
-
-																				.alcohol {
-
-																					span {}
-																				}
 																			}
 
 																			.price {
 																				display: flex;
 																				justify-content: center;
 																				align-items: center;
-
-																				span {}
 																			}
 																		}
 																	}
@@ -292,11 +345,11 @@
 								border: unset;
 
 								&.portal--from {
-									border: 2px solid #6D362C;
+									border: 1px solid #6D362C;
 								}
 
 								&.portal--to {
-									border: 2px solid #F9F5EF;
+									border: 1px solid #F9F5EF;
 								}
 							}
 						}

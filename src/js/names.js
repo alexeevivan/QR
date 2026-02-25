@@ -2,10 +2,10 @@
 const textArray = [
 	"sidecar",
 	"mai-tai",
-	"aviation",
+	"kamikaze",
 	"appletini",
 	"papa doble",
-	"aperol spritz",
+	"venezian spritz",
 	"boulevardier",
 	"whiskey sour",
 	"grasshopper",
