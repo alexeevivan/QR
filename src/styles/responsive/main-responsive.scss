@@ -189,7 +189,8 @@
 																&.amethyst,
 																&.passion,
 																&.sky-blue,
-																&.rose {
+																&.rose,
+																&.grey {
 																	border-bottom: 1px solid transparent;
 																	border-image-slice: 1;
 																}
@@ -208,6 +209,10 @@
 
 																&.amethyst {
 																	border-image: linear-gradient(to right, var(--main-color), #9966CC) 100% 1;
+																}
+
+																&.grey {
+																	border-image: linear-gradient(to right, var(--main-color), #58585A) 100% 1;
 																}
 
 																#accordion-button-1,
