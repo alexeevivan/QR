@@ -1,24 +1,35 @@
+// sticky.js — оптимизированная версия
+
 (function () {
-	init();
+	// Кэшируем DOM-элементы один раз, а не при каждом событии колеса
+	let contentContainers = [];
+	let horizontalEl = null;
 
 	function init() {
 		if (window.innerWidth <= 1024) return;
+
+		contentContainers = Array.from(document.querySelectorAll('.content'));
 		setStickyContainersSize();
 		bindEvents();
 	}
 
 	function bindEvents() {
-		// passive: false ОБЯЗАТЕЛЬНО
 		window.addEventListener("wheel", wheelHandler, { passive: false });
+
+		// Пересчитываем высоту при ресайзе (debounce — не спамим layout)
+		window.addEventListener("resize", debounce(() => {
+			contentContainers = Array.from(document.querySelectorAll('.content'));
+			setStickyContainersSize();
+		}, 200));
 	}
 
 	function setStickyContainersSize() {
-		document.querySelectorAll('.content').forEach(function (container) {
-			const horizontal = container.querySelector('.horizontal') || container.querySelector('.horizontal__pc');
+		contentContainers.forEach(function (container) {
+			// .horizontal__pc включает .horizontal, поэтому ищем один раз
+			const horizontal = container.querySelector('.horizontal__pc, .horizontal');
 			if (!horizontal) return;
-			// Устанавливаем высоту контейнера для "липкости"
-			const stikyContainerHeight = horizontal.scrollWidth + window.innerWidth;
-			container.setAttribute('style', 'height: ' + stikyContainerHeight + 'px');
+			// Высота = ширина горизонтальной ленты + viewport, чтобы было куда скроллить
+			container.style.height = (horizontal.scrollWidth + window.innerWidth) + 'px';
 		});
 	}
 
@@ -28,118 +39,95 @@
 	}
 
 	function wheelHandler(evt) {
-		// === 1. ЛОГИКА ВНУТРЕННЕГО СКРОЛЛА МЕНЮ ===
-		const target = evt.target;
-		const scrollArea = target.closest('.menu-scroll-area');
+		const delta = evt.deltaY;
+		if (delta === 0) return; // Игнорируем горизонтальный trackpad-скролл
 
-		if (scrollArea) {
-			const hasVerticalScroll = scrollArea.scrollHeight > scrollArea.clientHeight;
-			if (hasVerticalScroll) {
-				const scrollTop = scrollArea.scrollTop;
-				const maxScroll = scrollArea.scrollHeight - scrollArea.clientHeight;
-				const delta = evt.deltaY;
+		// === 1. ВНУТРЕННИЙ СКРОЛЛ МЕНЮ ===
+		// Если колесо крутится над .menu-scroll-area — отдаём управление ей
+		const scrollArea = evt.target.closest('.menu-scroll-area');
+		if (scrollArea && scrollArea.scrollHeight > scrollArea.clientHeight) {
+			const { scrollTop, scrollHeight, clientHeight } = scrollArea;
+			const atTop = scrollTop <= 0;
+			const atBottom = scrollTop >= scrollHeight - clientHeight - 1;
 
-				// Крутим ВВЕРХ, и мы НЕ в начале меню? -> Скроллим меню
-				if (delta < 0 && scrollTop > 0) {
-					evt.stopPropagation();
-					return;
-				}
-				// Крутим ВНИЗ, и мы НЕ в конце меню? -> Скроллим меню
-				if (delta > 0 && scrollTop < maxScroll) {
-					evt.stopPropagation();
-					return;
-				}
+			// Не дошли до края меню — скроллим меню, страницу не трогаем
+			if ((delta < 0 && !atTop) || (delta > 0 && !atBottom)) {
+				evt.stopPropagation();
+				return;
 			}
 		}
 
-		// === 2. ЛОГИКА ГОРИЗОНТАЛЬНОГО СКРОЛЛА СТРАНИЦЫ ===
+		// === 2. ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ СТРАНИЦЫ ===
+		const activeContainer = contentContainers.find(isElementInViewport);
+		if (!activeContainer) return;
 
-		// Находим активную секцию
-		const containerInViewPort = Array.from(document.querySelectorAll('.content')).find(function (container) {
-			return isElementInViewport(container);
-		});
-
-		if (!containerInViewPort) return;
-
-		const horizontal = containerInViewPort.querySelector('.horizontal') || containerInViewPort.querySelector('.horizontal__pc');
+		const horizontal = activeContainer.querySelector('.horizontal__pc, .horizontal');
 		if (!horizontal) return;
 
-		const currentLeft = horizontal.scrollLeft;
-		// Максимальная ширина прокрутки
-		const maxLeft = horizontal.scrollWidth - horizontal.clientWidth;
-		const delta = evt.deltaY;
+		const { scrollLeft, scrollWidth, clientWidth } = horizontal;
+		const maxLeft = scrollWidth - clientWidth;
 
-		// --- ИСПРАВЛЕНИЕ ЗАСТРЕВАНИЯ ---
-
-		// Сценарий А: Крутим ВВЕРХ (хотим назад)
-		if (delta < 0) {
-			// Если мы ЕЩЕ НЕ в самом начале (с запасом 1px)
-			if (currentLeft > 1) {
-				horizontal.scrollLeft += delta;
-				evt.preventDefault(); // Блокируем подъем страницы, двигаем ленту
-			}
-			// Иначе (если мы в начале, currentLeft == 0) -> 
-			// Ничего не делаем. preventDefault НЕ вызывается.
-			// Браузер сам поднимет страницу к .greeting
+		if (delta < 0 && scrollLeft > 1) {
+			// Едем влево — есть куда
+			horizontal.scrollLeft += delta;
+			evt.preventDefault();
+		} else if (delta > 0 && scrollLeft < maxLeft - 1) {
+			// Едем вправо — есть куда
+			horizontal.scrollLeft += delta;
+			evt.preventDefault();
 		}
-
-		// Сценарий Б: Крутим ВНИЗ (хотим вперед)
-		else if (delta > 0) {
-			// Если мы ЕЩЕ НЕ в самом конце (с запасом 1px)
-			if (currentLeft < maxLeft - 1) {
-				horizontal.scrollLeft += delta;
-				evt.preventDefault(); // Блокируем спуск страницы, двигаем ленту
-			}
-			// Иначе (если доехали до конца) -> 
-			// Ничего не делаем. Браузер сам опустит страницу ниже.
-		}
+		// Если достигли края — браузер сам скроллит страницу вверх/вниз
 	}
+
+	// Утилита: защита от лишних вызовов при ресайзе
+	function debounce(fn, delay) {
+		let timer;
+		return function (...args) {
+			clearTimeout(timer);
+			timer = setTimeout(() => fn.apply(this, args), delay);
+		};
+	}
+
+	init();
 })();
 
 
-// --- КОД АНИМАЦИИ ПРОЗРАЧНОСТИ (ОСТАВЛЯЕМ КАК БЫЛО) ---
-const container = document.querySelector(".horizontal__pc");
-if (container) {
-	const boxes = container.querySelectorAll(".box__pc");
-	function updateTransforms() {
+// --- АНИМАЦИЯ ПРОЗРАЧНОСТИ .info__content при горизонтальном скролле ---
+(function () {
+	const container = document.querySelector(".horizontal__pc");
+	if (!container) return;
+
+	const boxes = Array.from(container.querySelectorAll(".box__pc"));
+
+	// requestAnimationFrame — обновляем стили только в нужный момент рендера,
+	// а не при каждом тике события scroll
+	let rafScheduled = false;
+
+	function updateOpacity() {
+		rafScheduled = false;
 		const scrollLeft = container.scrollLeft;
+
 		boxes.forEach((box) => {
-			const imgs = box.querySelectorAll(".info__content");
-			if (!imgs.length) return;
+			const contents = box.querySelectorAll(".info__content");
+			if (!contents.length) return;
+
 			const progress = (scrollLeft - box.offsetLeft) / box.offsetWidth;
-			const clamped = Math.max(0, Math.min(1, progress));
-			imgs.forEach((img) => {
-				// Если clamped > 0, картинка уходит влево -> прозрачнее
-				img.style.opacity = (clamped > 0) ? 1 - clamped : 1;
+			const opacity = 1 - Math.max(0, Math.min(1, progress));
+
+			contents.forEach((el) => {
+				el.style.opacity = opacity;
 			});
 		});
 	}
-	container.addEventListener("scroll", updateTransforms);
-	window.addEventListener("resize", updateTransforms);
-	updateTransforms();
-}
 
-// const container = document.querySelector(".horizontal__pc");
-// if (container) {
-// 	const boxes = container.querySelectorAll(".box__pc");
+	function scheduleUpdate() {
+		if (!rafScheduled) {
+			rafScheduled = true;
+			requestAnimationFrame(updateOpacity);
+		}
+	}
 
-// 	function updateTransforms() {
-// 		const scrollLeft = container.scrollLeft;
-// 		boxes.forEach((box) => {
-// 			const imgs = box.querySelectorAll(".info__content");
-// 			if (!imgs.length) return;
-// 			const progress = (scrollLeft - box.offsetLeft) / box.offsetWidth;
-// 			const clamped = Math.max(0, Math.min(1, progress));
-// 			imgs.forEach((img) => {
-// 				if (clamped > 0) {
-// 					img.style.opacity = 1 - clamped;
-// 				} else {
-// 					img.style.opacity = 1;
-// 				}
-// 			});
-// 		});
-// 	}
-// 	container.addEventListener("scroll", updateTransforms);
-// 	window.addEventListener("resize", updateTransforms);
-// 	updateTransforms();
-// }
+	container.addEventListener("scroll", scheduleUpdate, { passive: true });
+	window.addEventListener("resize", scheduleUpdate, { passive: true });
+	updateOpacity(); // Первоначальный вызов
+})();

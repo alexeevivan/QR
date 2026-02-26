@@ -8,19 +8,48 @@
 :root {
 	--index: calc(1vw + 1vh);
 	--font-size: 16px;
-	--main-color: #E0D9D7;
-	--japanese-indigo: #163D4F;
-	--cyan: #17fffb;
-	--white: #ffffff;
-	--creamy: #D2D4D7;
-	--fuchsia: #ff0081;
-	--rose: #ffafcc;
-	--orange: #AA742C;
-	--banner: #B81C41;
-	--transparent: rgba(0, 0, 0, 0);
-	--vertical-line-color: #9fa3a77d;
 	--transition-duration: .3s;
 	--base-duration: .25s;
+
+	// ─── ФОНЫ ────────────────────────────────────────────────────────────────
+	// Используется: background gradient на body, html background
+	--bg-deep: #1E0C05; // Самый тёмный — верх градиента, html background
+	--bg-dark: #0E0E0E; // Низ градиента body
+	--bg-card: #140D0A; // Фон оборотной стороны карточки (.info--back)
+	--bg-card-hover: #1A0A1A; // Фон лицевой стороны при ховере
+
+	// ─── ОСНОВНОЙ ЦВЕТ (ТЕКСТ / РАМКИ / UI) ──────────────────────────────────
+	// Тёплый почти-белый — цвет всего текста, рамок, иконок
+	--color-main: #E0D9D7;
+	--color-main-60: #E0D9D799; // 60% прозрачность — для теней и свечений
+	--color-main-00: #E0D9D700; // 0%  прозрачность — для анимации outline
+
+	// ─── АКЦЕНТ — ЗОЛОТО ─────────────────────────────────────────────────────
+	// Рекомендуется для: цен, ABV-меток, активных состояний кнопок аккордеона,
+	// hover на language-switcher вместо текущего box-shadow
+	--color-gold: #C9A84C;
+
+	// ─── ПОРТАЛ (greeting-экран) ──────────────────────────────────────────────
+	// Используется: .portal--from (левая линия), .portal--to (правая линия)
+	--color-portal-from: #6D362C; // Тёмно-красный (от)
+	--color-portal-to: #F9F5EF; // Кремовый (до)
+
+	// ─── КАТЕГОРИИ КОКТЕЙЛЕЙ (accordion-category цвета) ──────────────────────
+	--color-masterpieces: #E7E7E7; // Нейтральный светлый
+	--color-treasures: #F1E1D1; // Тёплый кремовый
+	--color-vintage: #E9B36F; // Янтарный
+
+	// ─── ЛИНИИ TREASURE (gradient borders) ───────────────────────────────────
+	--color-treasure-grey: #58585A;
+	--color-treasure-rose: #D3315F;
+	--color-treasure-sky: #5AA5CF;
+	--color-treasure-passion: #EFE65E;
+	--color-treasure-amethyst: #9966CC;
+
+	// ─── СЛУЖЕБНЫЕ ───────────────────────────────────────────────────────────
+	--color-white: #ffffff;
+	--color-line: #9FA3A77D; // Цвет вертикальных разделителей
+	--color-transparent: rgba(0, 0, 0, 0);
 }
 
 *::before,
@@ -38,7 +67,7 @@ a:active {
 }
 
 html {
-	background: #1E0C05;
+	background: var(--bg-deep);
 }
 
 html,

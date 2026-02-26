@@ -3,13 +3,13 @@
 		.language-switcher {
 			button:active {
 				border-radius: 50%;
-				box-shadow: inset 0 0 10px #e0d9d760, 0 0 20px #e0d9d760;
-				outline-color: #e0d9d700;
+				box-shadow: inset 0 0 10px var(--color-main-60), 0 0 20px var(--color-main-60);
+				outline-color: var(--color-main-00);
 				outline-offset: calc(var(--index) * 0.5);
-				text-shadow: 1px 1px 2px #11110e;
+				text-shadow: 1px 1px 2px var(--bg-dark);
 				transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
 				transform: scale(0.7);
-				background: var(--main-color);
+				background: var(--color-main);
 			}
 		}
 
@@ -36,7 +36,7 @@
 
 					.arrow:before,
 					.arrow:after {
-						background: var(--main-color);
+						background: var(--color-main);
 						content: '';
 						display: block;
 						height: 2px;
@@ -85,7 +85,7 @@
 								justify-content: center;
 								align-items: center;
 								font-size: 4ch;
-								color: var(--main-color);
+								color: var(--color-main);
 								padding: calc(var(--index) * 1.5);
 								margin: 10vh 0 0 0;
 
@@ -97,7 +97,7 @@
 									flex-direction: column;
 									justify-content: center;
 									align-items: center;
-									border: 2px solid var(--main-color);
+									border: 2px solid var(--color-main);
 									border-radius: 28px;
 									padding: 10px;
 
@@ -196,73 +196,35 @@
 																}
 
 																&.passion {
-																	border-image: linear-gradient(to right, var(--main-color), #EFE65E) 100% 1;
+																	border-image: linear-gradient(to right, var(--color-main), var(--color-treasure-passion)) 100% 1;
 																}
 
 																&.rose {
-																	border-image: linear-gradient(to right, var(--main-color), #D3315F) 100% 1;
+																	border-image: linear-gradient(to right, var(--color-main), var(--color-treasure-rose)) 100% 1;
 																}
 
 																&.sky-blue {
-																	border-image: linear-gradient(to right, var(--main-color), #5AA5CF) 100% 1;
+																	border-image: linear-gradient(to right, var(--color-main), var(--color-treasure-sky)) 100% 1;
 																}
 
 																&.amethyst {
-																	border-image: linear-gradient(to right, var(--main-color), #9966CC) 100% 1;
+																	border-image: linear-gradient(to right, var(--color-main), var(--color-treasure-amethyst)) 100% 1;
 																}
 
 																&.grey {
-																	border-image: linear-gradient(to right, var(--main-color), #58585A) 100% 1;
+																	border-image: linear-gradient(to right, var(--color-main), var(--color-treasure-grey)) 100% 1;
 																}
 
-																#accordion-button-1,
-																#accordion-button-2,
-																#accordion-button-3,
-																#accordion-button-4,
-																#accordion-button-5,
-																#accordion-button-6,
-																#accordion-button-7,
-																#accordion-button-8,
-																#accordion-button-9,
-																#accordion-button-10,
-																#accordion-button-11,
-																#accordion-button-12,
-																#accordion-button-13,
-																#accordion-button-14,
-																#accordion-button-15,
-																#accordion-button-16,
-																#accordion-button-17,
-																#accordion-button-18,
-																#accordion-button-19,
-																#accordion-button-20,
-																#accordion-button-21,
-																#accordion-button-22,
-																#accordion-button-23,
-																#accordion-button-24,
-																#accordion-button-25,
-																#accordion-button-26,
-																#accordion-button-27,
-																#accordion-button-28,
-																#accordion-button-29,
-																#accordion-button-30,
-																#accordion-button-31,
-																#accordion-button-32,
-																#accordion-button-33,
-																#accordion-button-34,
-																#accordion-button-35,
-																#accordion-button-36,
-																#accordion-button-37,
-																#accordion-button-38,
-																#accordion-button-39,
-																#accordion-button-40,
-																#accordion-button-41,
-																#accordion-button-42,
-																#accordion-button-43 {
+																.accordion-btn--item {
 																	justify-content: space-between !important;
 
 																	.accordion-title {
 																		display: inline-block;
 																		width: 90%;
+
+																		&.zh {
+																			font-family: "SF Pro Display Thin", sans-serif !important;
+																		}
 																	}
 
 																	.accordion-category {
@@ -270,23 +232,20 @@
 																	}
 																}
 
-																#accordion-button-100,
-																#accordion-button-200,
-																#accordion-button-300,
-																#accordion-button-400 {
+																.accordion-btn--heading {
 																	span {
 																		text-transform: uppercase;
 																	}
-																}
 
-																#accordion-button-100 {
-																	margin: 0 0 calc(var(--index) * 1.5) 0;
-																}
+																	&#accordion-button-100 {
+																		margin: 0 0 calc(var(--index) * 1.5) 0;
+																	}
 
-																#accordion-button-200,
-																#accordion-button-300,
-																#accordion-button-400 {
-																	margin: calc(var(--index) * 1.5) 0;
+																	&#accordion-button-200,
+																	&#accordion-button-300,
+																	&#accordion-button-400 {
+																		margin: calc(var(--index) * 1.5) 0;
+																	}
 																}
 
 																.accordion-content {
@@ -383,11 +342,11 @@
 								border: unset;
 
 								&.portal--from {
-									border: 1px solid #6D362C;
+									border: 1px solid var(--color-portal-from);
 								}
 
 								&.portal--to {
-									border: 1px solid #F9F5EF;
+									border: 1px solid var(--color-portal-to);
 								}
 							}
 						}

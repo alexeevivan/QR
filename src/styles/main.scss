@@ -1,6 +1,6 @@
 body {
 	font-family: "SF Pro Display Thin", sans-serif;
-	background: linear-gradient(#1E0C05, #0e0e0e);
+	background: linear-gradient(var(--bg-deep), var(--bg-dark));
 	text-align: center;
 	overflow-x: hidden;
 
@@ -25,12 +25,12 @@ body {
 	#splash {
 		position: fixed;
 		inset: 0;
-		background-color: var(--main-color);
+		background-color: var(--color-main);
 		z-index: 9999;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: #000;
+		color: var(--bg-dark);
 		font-size: 2rem;
 		opacity: 1;
 		transition: opacity 0.5s ease;
@@ -54,13 +54,13 @@ body {
 			border: 0 solid;
 			border-radius: 2px;
 			outline: 1px solid;
-			outline-color: var(--main-color);
+			outline-color: var(--color-main);
 			outline-offset: 0px;
 			text-shadow: none;
 			transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
 			padding: calc(var(--index));
 			background-color: transparent;
-			color: var(--main-color);
+			color: var(--color-main);
 		}
 	}
 
@@ -99,7 +99,7 @@ body {
 							.text-inner {
 								span {
 									font-size: calc(var(--index) * 2);
-									color: var(--main-color);
+									color: var(--color-main);
 								}
 							}
 						}
@@ -109,11 +109,11 @@ body {
 							height: clamp(200px, 30vh, 600px);
 
 							&.portal--from {
-								border-left: 3px solid #6D362C;
+								border-left: 3px solid var(--color-portal-from);
 							}
 
 							&.portal--to {
-								border-right: 3px solid #F9F5EF;
+								border-right: 3px solid var(--color-portal-to);
 							}
 						}
 					}
@@ -136,7 +136,7 @@ body {
 							align-items: center;
 							font-size: 4ch;
 							background-color: transparent;
-							color: var(--main-color);
+							color: var(--color-main);
 							padding: calc(var(--index) * 1.5);
 
 							// === 1. ДОБАВЛЯЕМ ПЕРСПЕКТИВУ КОНТЕЙНЕРУ ===
@@ -212,7 +212,7 @@ body {
 								flex-direction: column;
 								justify-content: center;
 								align-items: center;
-								border: 2px solid var(--main-color);
+								border: 2px solid var(--color-main);
 								border-radius: 28px;
 								padding: 10px;
 								overflow: hidden;
@@ -252,7 +252,7 @@ body {
 										align-items: center;
 
 										p {
-											color: white;
+											color: var(--color-main);
 											font-size: calc(var(--index) * 1.25);
 											text-transform: uppercase;
 
@@ -284,7 +284,7 @@ body {
 
 								// Ховер работает только на лицевой стороне
 								&:not(.info--back):hover {
-									background: linear-gradient(to top, #1a0a1a, #140D0A);
+									background: linear-gradient(to top, var(--bg-card-hover), var(--bg-card));
 
 									img {
 										opacity: .25;
@@ -295,7 +295,7 @@ body {
 
 							// === 5. СТИЛИ ДЛЯ ОБРАТНОЙ СТОРОНЫ (МЕНЮ) ===
 							.info--back {
-								background: #140D0A; // Темный фон, чтобы меню читалось
+								background: var(--bg-card); // Темный фон, чтобы меню читалось
 								cursor: default; // Тут клик не переворачивает (только крестик)
 								display: flex;
 								flex-direction: column;
@@ -312,8 +312,8 @@ body {
 									text-transform: uppercase;
 									font-size: calc(var(--index) * 1.5);
 									margin-bottom: 20px;
-									color: var(--main-color);
-									border-bottom: 1px solid var(--main-color);
+									color: var(--color-main);
+									border-bottom: 1px solid var(--color-main);
 									padding-bottom: 10px;
 									width: 100%;
 									text-align: center;
@@ -343,7 +343,7 @@ body {
 									}
 
 									&::-webkit-scrollbar-thumb {
-										background: var(--main-color);
+										background: var(--color-main);
 										border-radius: 4px;
 									}
 								}
@@ -358,7 +358,7 @@ body {
 										border-bottom: 1px solid white;
 
 										button[aria-expanded='true'] {
-											border-bottom: 1px solid var(--main-color);
+											border-bottom: 1px solid var(--color-gold);
 										}
 
 										button {
@@ -367,7 +367,7 @@ body {
 											text-align: left;
 											width: 100%;
 											padding: 10px 0;
-											color: white;
+											color: var(--color-main);
 											font-weight: 400;
 											border: none;
 											background: none;
@@ -376,24 +376,24 @@ body {
 											&:hover,
 											&:focus {
 												cursor: pointer;
-												color: var(--main-color);
+												color: var(--color-main);
 
 												&::after {
 													cursor: pointer;
-													color: var(--main-color);
-													border: 1px solid var(--main-color);
+													color: var(--color-main);
+													border: 1px solid var(--color-main);
 												}
 											}
 
 											&[aria-expanded="true"] {
-												color: var(--main-color);
+												color: var(--color-gold);
 
 												.icon {
 													transform: rotate(45deg);
 													transition: .5s;
 
 													&::after {
-														width: 0;
+														width: 2px;
 													}
 												}
 
@@ -407,121 +407,31 @@ body {
 											}
 										}
 
-										#accordion-button-100,
-										#accordion-button-200,
-										#accordion-button-300,
-										#accordion-button-400,
-										#accordion-button-1,
-										#accordion-button-2,
-										#accordion-button-3,
-										#accordion-button-4,
-										#accordion-button-5,
-										#accordion-button-6,
-										#accordion-button-7,
-										#accordion-button-8,
-										#accordion-button-9,
-										#accordion-button-10,
-										#accordion-button-11,
-										#accordion-button-12,
-										#accordion-button-13,
-										#accordion-button-14,
-										#accordion-button-15,
-										#accordion-button-16,
-										#accordion-button-17,
-										#accordion-button-18,
-										#accordion-button-19,
-										#accordion-button-20,
-										#accordion-button-21,
-										#accordion-button-22,
-										#accordion-button-23,
-										#accordion-button-24,
-										#accordion-button-25,
-										#accordion-button-26,
-										#accordion-button-27,
-										#accordion-button-28,
-										#accordion-button-29,
-										#accordion-button-30,
-										#accordion-button-31,
-										#accordion-button-32,
-										#accordion-button-33,
-										#accordion-button-34,
-										#accordion-button-35,
-										#accordion-button-36,
-										#accordion-button-37,
-										#accordion-button-38,
-										#accordion-button-39,
-										#accordion-button-40,
-										#accordion-button-41,
-										#accordion-button-42,
-										#accordion-button-43 {
+										// Кнопки-элементы (коктейли) — flex + цвета категорий + иконка
+										.accordion-btn--item {
 											display: flex;
 											flex-direction: row;
 											justify-content: center;
-
-											.accordion-category {
-												&.masterpieces {
-													color: #E7E7E7;
-												}
-
-												&.treasures {
-													color: #F1E1D1;
-												}
-
-												&.vintage {
-													color: #E9B36F;
-												}
-											}
-										}
-
-										#accordion-button-1,
-										#accordion-button-2,
-										#accordion-button-3,
-										#accordion-button-4,
-										#accordion-button-5,
-										#accordion-button-6,
-										#accordion-button-7,
-										#accordion-button-8,
-										#accordion-button-9,
-										#accordion-button-10,
-										#accordion-button-11,
-										#accordion-button-12,
-										#accordion-button-13,
-										#accordion-button-14,
-										#accordion-button-15,
-										#accordion-button-16,
-										#accordion-button-17,
-										#accordion-button-18,
-										#accordion-button-19,
-										#accordion-button-20,
-										#accordion-button-21,
-										#accordion-button-22,
-										#accordion-button-23,
-										#accordion-button-24,
-										#accordion-button-25,
-										#accordion-button-26,
-										#accordion-button-27,
-										#accordion-button-28,
-										#accordion-button-29,
-										#accordion-button-30,
-										#accordion-button-31,
-										#accordion-button-32,
-										#accordion-button-33,
-										#accordion-button-34,
-										#accordion-button-35,
-										#accordion-button-36,
-										#accordion-button-37,
-										#accordion-button-38,
-										#accordion-button-39,
-										#accordion-button-40,
-										#accordion-button-41,
-										#accordion-button-42,
-										#accordion-button-43 {
 
 											.accordion-title,
 											.accordion-category {
 												display: block;
 												width: 50%;
 												font-size: 1.15rem;
+											}
+
+											.accordion-category {
+												&.masterpieces {
+													color: var(--color-masterpieces);
+												}
+
+												&.treasures {
+													color: var(--color-treasures);
+												}
+
+												&.vintage {
+													color: var(--color-vintage);
+												}
 											}
 
 											.icon {
@@ -558,10 +468,12 @@ body {
 											}
 										}
 
-										#accordion-button-100,
-										#accordion-button-200,
-										#accordion-button-300,
-										#accordion-button-400 {
+										// Кнопки-заголовки категорий (100/200/300/400) — без иконки
+										.accordion-btn--heading {
+											display: flex;
+											flex-direction: row;
+											justify-content: center;
+
 											.accordion-title {
 												text-align: center;
 												width: 100%;
@@ -598,14 +510,14 @@ body {
 								background: none;
 								border: none;
 								font-size: 30px;
-								color: var(--main-color);
+								color: var(--color-main);
 								cursor: pointer;
 								z-index: 10;
 								transition: transform 0.3s;
 
 								&:hover {
 									transform: rotate(90deg);
-									color: white;
+									color: var(--color-white);
 								}
 							}
 
@@ -662,7 +574,7 @@ body {
 
 @keyframes glow {
 	40% {
-		text-shadow: 0 0 8px #fff;
+		text-shadow: 0 0 8px var(--color-white);
 	}
 }
 
@@ -682,10 +594,10 @@ body {
 			&:hover {
 				border: 0px solid;
 				border-radius: 50%;
-				box-shadow: inset 0 0 10px #e0d9d760, 0 0 20px #e0d9d760;
-				outline-color: #e0d9d700;
+				box-shadow: inset 0 0 10px var(--color-main-60), 0 0 20px var(--color-main-60);
+				outline-color: var(--color-main-00);
 				outline-offset: calc(var(--index) * 0.5);
-				text-shadow: 1px 1px 2px #11110e;
+				text-shadow: 1px 1px 2px var(--bg-dark);
 
 				&:active {
 					transform: scale(0.7);
