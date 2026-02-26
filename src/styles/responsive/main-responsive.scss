@@ -250,6 +250,7 @@
 
 																.accordion-content {
 																	p {
+																		font-family: "Inter";
 																		font-size: 0.75rem;
 																	}
 
@@ -258,10 +259,44 @@
 																		margin: 0 0 calc(var(--index) * 1.5) 0;
 																	}
 
+																	&.signature {
+																		display: flex;
+																		flex-direction: column;
+
+																		p {
+																			text-align: justify;
+																		}
+
+																		.data {
+																			display: grid;
+																			grid-template-columns: 60% 20% 20%;
+																			margin: 0 0 .75rem 0;
+
+																			span {
+																				font-family: "Inter";
+																				font-size: 0.75rem;
+																			}
+																		}
+																	}
+
+																	&.treasure {
+																		display: grid;
+																		grid-template-columns: 80% 20%;
+																		align-items: center;
+
+																		span {
+																			text-align: center;
+																			font-family: "Inter";
+																			font-size: 0.75rem;
+																		}
+																	}
+
 																	&.recipe {
+																		font-family: "Inter";
+
 																		.note {
 																			font-size: .75rem;
-																			text-align: center;
+																			text-align: justify;
 																		}
 
 																		.cocktail-details {
@@ -276,6 +311,13 @@
 
 																				li {
 																					display: flex;
+																					align-items: center;
+
+																					&::before {
+																						content: "●";
+																						font-size: .25rem;
+																						margin: 0 calc(var(--index) * .5) 0 0;
+																					}
 
 																					span {
 																						font-size: .75rem;
