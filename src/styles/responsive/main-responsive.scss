@@ -222,7 +222,37 @@
 																#accordion-button-10,
 																#accordion-button-11,
 																#accordion-button-12,
-																#accordion-button-13 {
+																#accordion-button-13,
+																#accordion-button-14,
+																#accordion-button-15,
+																#accordion-button-16,
+																#accordion-button-17,
+																#accordion-button-18,
+																#accordion-button-19,
+																#accordion-button-20,
+																#accordion-button-21,
+																#accordion-button-22,
+																#accordion-button-23,
+																#accordion-button-24,
+																#accordion-button-25,
+																#accordion-button-26,
+																#accordion-button-27,
+																#accordion-button-28,
+																#accordion-button-29,
+																#accordion-button-30,
+																#accordion-button-31,
+																#accordion-button-32,
+																#accordion-button-33,
+																#accordion-button-34,
+																#accordion-button-35,
+																#accordion-button-36,
+																#accordion-button-37,
+																#accordion-button-38,
+																#accordion-button-39,
+																#accordion-button-40,
+																#accordion-button-41,
+																#accordion-button-42,
+																#accordion-button-43 {
 																	justify-content: space-between !important;
 
 																	.accordion-title {
@@ -237,7 +267,8 @@
 
 																#accordion-button-100,
 																#accordion-button-200,
-																#accordion-button-300 {
+																#accordion-button-300,
+																#accordion-button-400 {
 																	span {
 																		text-transform: uppercase;
 																	}
@@ -248,7 +279,8 @@
 																}
 
 																#accordion-button-200,
-																#accordion-button-300 {
+																#accordion-button-300,
+																#accordion-button-400 {
 																	margin: calc(var(--index) * 1.5) 0;
 																}
 
@@ -258,6 +290,7 @@
 																	}
 
 																	.accordion-content__category-description {
+																		text-align: center;
 																		margin: 0 0 calc(var(--index) * 1.5) 0;
 																	}
 
