@@ -220,6 +220,10 @@
 																	border-image: linear-gradient(to right, var(--color-main), var(--color-treasure-grey)) 100% 1;
 																}
 
+																&.last {
+																	margin: 0 0 calc(var(--index) * 1.5) 0;
+																}
+
 																.accordion-btn--item {
 																	justify-content: space-between !important;
 
@@ -256,7 +260,10 @@
 																	&#accordion-button-900,
 																	&#accordion-button-1000,
 																	&#accordion-button-1100,
-																	&#accordion-button-1200 {
+																	&#accordion-button-1200,
+																	&#accordion-button-1300,
+																	&#accordion-button-1400,
+																	&#accordion-button-1500 {
 																		margin: calc(var(--index) * 1.5) 0;
 																	}
 																}
@@ -365,6 +372,18 @@
 
 																							&.wine-enthusiast {
 																								border-color: #617d8b;
+																							}
+
+																							&.james-suckling {
+																								border-color: #b11a12;
+																							}
+
+																							&.vivino {
+																								border-color: #BA1628;
+																							}
+
+																							&.empty {
+																								display: none;
 																							}
 																						}
 																					}
