@@ -38,6 +38,20 @@ const aperitifNames = [
 	"ROSSBACHER",
 ];
 
+const wineNames = [
+	"SPY VALLEY",
+	"CHÂTEAU LA GORCE",
+	"CUSUMANO. INSOLIA",
+	"CHABLIS LA PIERRELEE",
+	"CHÂTEAU BRANE-CANTENAC",
+	"SASSICAIA. TENUTA SAN GUIDO",
+	"BARONE RICASOLI. ASTUTO",
+	"MERUM PRIORATI. INICI",
+	"TRAPICHE. OAK CASK",
+	"RIESLING TERRASSEN",
+	"SAN PEDRO. 1865",
+];
+
 // ─── УНИВЕРСАЛЬНАЯ ФУНКЦИЯ АНИМАЦИИ ──────────────────────────────────────────
 
 /**
@@ -94,4 +108,9 @@ startNameAnimation(
 startNameAnimation(
 	document.querySelector("#callsign-aperitif"),
 	aperitifNames
+);
+
+startNameAnimation(
+	document.querySelector("#callsign-wine"),
+	wineNames
 );
