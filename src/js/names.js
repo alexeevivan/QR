@@ -1,5 +1,12 @@
+// names.js — универсальная анимация названий для любого бокса
 
-const textArray = [
+const DELAY = 2500;
+const ANIMATE_IN_DURATION = 500;
+const ANIMATE_OUT_DURATION = 500;
+
+// ─── МАССИВЫ НАЗВАНИЙ ────────────────────────────────────────────────────────
+
+const cocktailNames = [
 	"sidecar",
 	"mai-tai",
 	"kamikaze",
@@ -17,43 +24,74 @@ const textArray = [
 	"vesper",
 ];
 
-const callsign = document.querySelector("#callsign");
-var delay = 2500;
-var animateInDuration = 500;
-var animateOutDuration = 500;
+const aperitifNames = [
+	"suze",
+	"campari",
+	"HIRSCHRUDEL",
+	"Jägermeister",
+	"D.O.M. PÉRIGNON",
+	"martini vermouth",
+	"WOLFBERGER CRÉMANT D’ALSACE BRUT ROSÉ",
+	"VEUVE CLICQUOT PONSARDIN",
+	"MOЁT & CHANDON IMPÉRIAL",
+	"MARTINI. ASTI",
+	"ROSSBACHER",
+];
 
-function replaceText(i) {
-	setTimeout(function () {
-		callsign.innerText = textArray[i];
-		console.log(textArray[i]);
-	}, delay * i)
-};
+// ─── УНИВЕРСАЛЬНАЯ ФУНКЦИЯ АНИМАЦИИ ──────────────────────────────────────────
 
-function animateIn(i) {
-	setTimeout(function () {
-		callsign.className = "js-animate-in";
-	}, delay * i);
-	if (i != 0) {
-		setTimeout(function () {
-			callsign.className = "";
-		}, delay * i - (delay - animateInDuration));
+/**
+ * Запускает цикличную анимацию смены названий для одного элемента.
+ * @param {HTMLElement} el     - элемент, в котором меняется текст
+ * @param {string[]}    names  - массив названий
+ */
+function startNameAnimation(el, names) {
+	if (!el || !names.length) return;
+
+	function replaceText(i) {
+		setTimeout(() => {
+			el.innerText = names[i];
+		}, DELAY * i);
 	}
-};
 
-function animateOut(i) {
-	setTimeout(function () {
-		callsign.className = "js-animate-out";
-	}, delay * i + (delay - animateOutDuration))
-};
+	function animateIn(i) {
+		setTimeout(() => {
+			el.className = "js-animate-in";
+		}, DELAY * i);
 
-
-function animate() {
-	for (i = 0; i < textArray.length; i++) {
-		replaceText(i);
-		animateIn(i);
-		animateOut(i);
+		if (i !== 0) {
+			setTimeout(() => {
+				el.className = "";
+			}, DELAY * i - (DELAY - ANIMATE_IN_DURATION));
+		}
 	}
+
+	function animateOut(i) {
+		setTimeout(() => {
+			el.className = "js-animate-out";
+		}, DELAY * i + (DELAY - ANIMATE_OUT_DURATION));
+	}
+
+	function animate() {
+		for (let i = 0; i < names.length; i++) {
+			replaceText(i);
+			animateIn(i);
+			animateOut(i);
+		}
+	}
+
+	animate();
+	setInterval(animate, DELAY * names.length);
 }
 
-animate();
-setInterval(animate, delay * textArray.length);
+// ─── ЗАПУСК ДЛЯ КАЖДОГО БОКСА ────────────────────────────────────────────────
+
+startNameAnimation(
+	document.querySelector("#callsign"),
+	cocktailNames
+);
+
+startNameAnimation(
+	document.querySelector("#callsign-aperitif"),
+	aperitifNames
+);

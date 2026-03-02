@@ -242,13 +242,16 @@
 																		text-transform: uppercase;
 																	}
 
-																	&#accordion-button-100 {
+																	&#accordion-button-100,
+																	&#accordion-button-500 {
 																		margin: 0 0 calc(var(--index) * 1.5) 0;
 																	}
 
 																	&#accordion-button-200,
 																	&#accordion-button-300,
-																	&#accordion-button-400 {
+																	&#accordion-button-400,
+																	&#accordion-button-600,
+																	&#accordion-button-700 {
 																		margin: calc(var(--index) * 1.5) 0;
 																	}
 																}
@@ -272,14 +275,95 @@
 																			text-align: justify;
 																		}
 
+																		.component-info {
+																			display: flex;
+																			margin: 0 0 1rem 0;
+
+																			ul {
+																				display: inline-flex;
+																				justify-content: space-between;
+																				width: 100%;
+																				flex-wrap: wrap;
+																				height: auto;
+
+																				li {
+																					color: #708090;
+																					display: inline-grid;
+																					font-size: calc(var(--index) * .8);
+																					grid-template-columns: 20% 1fr;
+																					list-style: none;
+																					text-transform: capitalize;
+																					width: 100%;
+																					margin: 0 0 calc(var(--index) * .25) 0;
+
+																					span {
+																						color: var(--color-main);
+																						text-align: left;
+
+																						&:nth-child(1) {
+																							margin: 0 50px 0 0;
+																						}
+
+																						&:nth-child(2) {
+																							list-style: none;
+																							text-transform: capitalize;
+																						}
+																					}
+																				}
+																			}
+																		}
+
 																		.data {
 																			display: grid;
 																			grid-template-columns: 60% 20% 20%;
 																			margin: 0 0 .75rem 0;
+																			align-items: center;
 
 																			span {
 																				font-family: "Inter";
 																				font-size: 0.75rem;
+																			}
+
+																			&.aperitif {
+																				grid-template-columns: 10% 20% 20% 20% 20% 10%;
+
+																				&.ratings {
+																					grid-template-columns: 50% 20% 20% 10%;
+
+																					.ratings__data {
+																						display: flex;
+																						flex-direction: row;
+																						justify-content: space-evenly;
+
+																						.rating__empty {
+																							display: none;
+																						}
+
+																						.rating {
+																							max-width: 75%;
+																							border: .5px solid;
+																							border-radius: 6px;
+																							font-family: "Inter";
+																							padding: 4px 12px 4px 12px;
+																							text-transform: uppercase;
+																							display: inline-flex;
+																							text-align: center;
+																							max-width: 80%;
+
+																							&.wine-spectator {
+																								border-color: var(--color-vintage);
+																							}
+
+																							&.robert-parker {
+																								border-color: #0C6A56;
+																							}
+
+																							&.wine-enthusiast {
+																								border-color: #617d8b;
+																							}
+																						}
+																					}
+																				}
 																			}
 																		}
 																	}

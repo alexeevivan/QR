@@ -54,9 +54,7 @@
 							<button class="close-flip-btn js-close-flip">
 								&times;
 							</button>
-							<h3 class="menu-title">
-								Menu
-							</h3>
+							<h3 class="menu-title" data-i18n="menu-cocktail"></h3>
 							<div class="menu-scroll-area">
 								<div class="accordion">
 									<div class="accordion-item">
@@ -675,7 +673,7 @@
 														</span>
 													</li>
 													<li>
-														<span data-i18n="zombie-grapefuit">
+														<span data-i18n="zombie-grapefruit">
 															Grapefruit juice
 														</span>
 													</li>
@@ -2336,17 +2334,659 @@
 				</div>
 			</div>
 			<div class="box box__pc js-flip-container" id="aperitif">
-				<div class="info">
-					<div class="info__description">
-						<h3 data-i18n="content-box-aperitif">
-
-						</h3>
-						<span>
-							Lorem ipsum dolor sit amet.
-						</span>
+				<div class="flip-inner">
+					<div class="flip-face flip-front">
+						<div class="info js-open-flip">
+							<div class="info__description">
+								<h3 data-i18n="content-box-aperitif"></h3>
+								<div class="info__content">
+									<p class="js-animate-in" id="callsign-aperitif"></p>
+								</div>
+								<span data-i18n="content-box-aperitif-banner"></span>
+							</div>
+							<img src="../../assets/content/spices.png" alt="">
+							<div class="tap-icon">↻</div>
+						</div>
 					</div>
-					<div class="info__content">
-
+					<div class="flip-face flip-back">
+						<div class="info info--back">
+							<button class="close-flip-btn js-close-flip">
+								&times;
+							</button>
+							<h3 class="menu-title" data-i18n="menu-aperitif"></h3>
+							<div class="menu-scroll-area">
+								<div class="accordion">
+									<div class="accordion-item">
+										<button id="accordion-button-500" class="accordion-btn--heading"
+											aria-expanded="false">
+											<span class="accordion-title zh" data-i18n="amaro_bitter-title">
+												amaro &amp; bitter
+											</span>
+										</button>
+										<div class="accordion-content">
+											<p class="accordion-content__category-description"
+												data-i18n="amaro_bitter-description"></p>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-44" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Amaro di Angostura
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-amaro"></p>
+											<div class="data aperitif">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume">
+													5 cl
+												</span>
+												<span>
+													20 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume">
+													70 cl
+												</span>
+												<span>
+													252 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-45" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Becherovka
+											</span>
+											<span class="accordion-category masterpieces">
+												30 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-becherovka"></p>
+											<div class="data aperitif">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume">
+													5 cl
+												</span>
+												<span>
+													16 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume">
+													70 cl
+												</span>
+												<span>
+													202 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-46" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Campari
+											</span>
+											<span class="accordion-category masterpieces">
+												30 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-campari"></p>
+											<div class="data aperitif">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume">
+													5 cl
+												</span>
+												<span>
+													22 BYN
+												</span>
+												<span data-i18n="campari-bottle-volume">
+													100 cl
+												</span>
+												<span>
+													396 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-47" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Hirschrudel
+											</span>
+											<span class="accordion-category masterpieces">
+												30 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-hirschrudel"></p>
+											<div class="data aperitif">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume">
+													5 cl
+												</span>
+												<span>
+													50 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume">
+													70 cl
+												</span>
+												<span>
+													450 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-5" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Jägermeister
+											</span>
+											<span class="accordion-category masterpieces">
+												30 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-jagermeister"></p>
+											<div class="data aperitif">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume">
+													5 cl
+												</span>
+												<span>
+													20 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume">
+													70 cl
+												</span>
+												<span>
+													360 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-48" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Rossbacher
+											</span>
+											<span class="accordion-category masterpieces">
+												300 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-rossbacher"></p>
+											<div class="data aperitif">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume">
+													5 cl
+												</span>
+												<span>
+													18 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume">
+													70 cl
+												</span>
+												<span>
+													227 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-49" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Suze
+											</span>
+											<span class="accordion-category masterpieces">
+												300 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-suze"></p>
+											<div class="data aperitif">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume">
+													5 cl
+												</span>
+												<span>
+													18 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume">
+													70 cl
+												</span>
+												<span>
+													227 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-600" class="accordion-btn--heading"
+											aria-expanded="false">
+											<span class="accordion-title zh" data-i18n="champagne-title">
+												champagne
+											</span>
+										</button>
+										<div class="accordion-content">
+											<p class="accordion-content__category-description"
+												data-i18n="champagne-description"></p>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-50" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												D.O.M. Pérignon. Millésime
+											</span>
+											<span class="accordion-category masterpieces">
+												300 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-dom"></p>
+											<div class="component-info">
+												<ul>
+													<li>
+														<span data-i18n="region">
+															Region:
+														</span>
+														<span data-i18n="region-champagne">
+															France. Champagne
+														</span>
+													</li>
+													<li>
+														<span data-i18n="grape">
+															Grape:
+														</span>
+														<span data-i18n="grape-dom">
+															Pinot Noir — 46%, Chardonnay — 54%
+														</span>
+													</li>
+													<li>
+														<span data-i18n="bouquet">
+															Bouquet:
+														</span>
+														<span data-i18n="bouquet-dom">
+															nectarine, apricot, mint, guava, white pepper
+														</span>
+													</li>
+													<li>
+														<span data-i18n="abv">
+															ABV:
+														</span>
+														<span data-i18n="abv-dom">
+															12.5%
+														</span>
+													</li>
+												</ul>
+											</div>
+											<div class="data aperitif ratings">
+												<div class="ratings__data">
+													<span class="rating wine-spectator" title="Wine Spectator Rating">
+														ws 96
+													</span>
+													<span class="rating robert-parker" title="Robert Parker Rating">
+														rp 98
+													</span>
+												</div>
+												<span data-i18n="champagne-bottle-volume">
+													75 cl
+												</span>
+												<span>
+													3997 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-51" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Veuve Clicquot. Ponsardin
+											</span>
+											<span class="accordion-category masterpieces">
+												300 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-veuve"></p>
+											<div class="component-info">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-champagne"></span>
+													</li>
+													<li>
+														<span data-i18n="grape"></span>
+														<span data-i18n="grape-veuve"></span>
+													</li>
+													<li>
+														<span data-i18n="bouquet"></span>
+														<span data-i18n="bouquet-veuve"></span>
+													</li>
+													<li>
+														<span data-i18n="abv"></span>
+														<span data-i18n="abv-veuve"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data aperitif ratings">
+												<div class="ratings__data">
+													<span class="rating wine-spectator" title="Wine Spectator Rating">
+														ws 90
+													</span>
+													<span class="rating robert-parker" title="Robert Parker Rating">
+														rp 89
+													</span>
+												</div>
+												<span data-i18n="champagne-bottle-volume">
+													75 cl
+												</span>
+												<span>
+													853 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-52" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Moët & Chandon. Impérial
+											</span>
+											<span class="accordion-category masterpieces">
+												300 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-moet"></p>
+											<div class="component-info">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-champagne"></span>
+													</li>
+													<li>
+														<span data-i18n="grape"></span>
+														<span data-i18n="grape-moet"></span>
+													</li>
+													<li>
+														<span data-i18n="bouquet"></span>
+														<span data-i18n="bouquet-moet"></span>
+													</li>
+													<li>
+														<span data-i18n="abv"></span>
+														<span data-i18n="abv-moet"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data aperitif ratings">
+												<div class="ratings__data">
+													<span class="rating wine-spectator" title="Wine Spectator Rating">
+														ws 91
+													</span>
+													<span class="rating robert-parker" title="Robert Parker Rating">
+														rp 86
+													</span>
+												</div>
+												<span data-i18n="champagne-bottle-volume">
+													75 cl
+												</span>
+												<span>
+													715 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-700" class="accordion-btn--heading"
+											aria-expanded="false">
+											<span class="accordion-title zh" data-i18n="sparkling-title">
+												sparkling wine
+											</span>
+										</button>
+										<div class="accordion-content">
+											<p class="accordion-content__category-description"
+												data-i18n="sparkling-description"></p>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-53" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Martini. Asti
+											</span>
+											<span class="accordion-category masterpieces">
+												300 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-asti"></p>
+											<div class="component-info">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-asti"></span>
+													</li>
+													<li>
+														<span data-i18n="grape"></span>
+														<span data-i18n="grape-asti"></span>
+													</li>
+													<li>
+														<span data-i18n="bouquet"></span>
+														<span data-i18n="bouquet-asti"></span>
+													</li>
+													<li>
+														<span data-i18n="abv"></span>
+														<span data-i18n="abv-asti"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data aperitif ratings">
+												<div class="ratings__data">
+													<span class="rating wine-spectator" title="Wine Spectator Rating">
+														ws 80
+													</span>
+													<span class="rating wine-enthusiast" title="Wine Enthusiast Rating">
+														we 85
+													</span>
+												</div>
+												<span data-i18n="champagne-bottle-volume">
+													75 cl
+												</span>
+												<span>
+													234 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-54" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Wolfberger. Crémant d’Alsace. Brut Rosé
+											</span>
+											<span class="accordion-category masterpieces">
+												300 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-cremant"></p>
+											<div class="component-info">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-cremant"></span>
+													</li>
+													<li>
+														<span data-i18n="grape"></span>
+														<span data-i18n="grape-cremant"></span>
+													</li>
+													<li>
+														<span data-i18n="bouquet"></span>
+														<span data-i18n="bouquet-cremant"></span>
+													</li>
+													<li>
+														<span data-i18n="abv"></span>
+														<span data-i18n="abv-cremant"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data aperitif ratings">
+												<div class="ratings__data">
+													<span class="rating wine-spectator" title="Wine Spectator Rating">
+														ws 84
+													</span>
+													<span class="rating wine-enthusiast" title="Wine Enthusiast Rating">
+														we 87
+													</span>
+												</div>
+												<span data-i18n="champagne-bottle-volume">
+													75 cl
+												</span>
+												<span>
+													290 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-55" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Bodegas Piqueras. El Abuelo
+											</span>
+											<span class="accordion-category masterpieces">
+												300 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-abuelo"></p>
+											<div class="component-info">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-abuelo"></span>
+													</li>
+													<li>
+														<span data-i18n="grape"></span>
+														<span data-i18n="grape-abuelo"></span>
+													</li>
+													<li>
+														<span data-i18n="bouquet"></span>
+														<span data-i18n="bouquet-abuelo"></span>
+													</li>
+													<li>
+														<span data-i18n="abv"></span>
+														<span data-i18n="abv-abuelo"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data aperitif ratings">
+												<div class="ratings__data">
+													<span class="rating__empty"></span>
+													<span class="rating__empty"></span>
+												</div>
+												<span data-i18n="champagne-bottle-volume">
+													75 cl
+												</span>
+												<span>
+													100 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-56" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Luna Argenta. Prosecco
+											</span>
+											<span class="accordion-category masterpieces">
+												300 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="aperitif-luna"></p>
+											<div class="component-info">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-luna"></span>
+													</li>
+													<li>
+														<span data-i18n="grape"></span>
+														<span data-i18n="grape-luna"></span>
+													</li>
+													<li>
+														<span data-i18n="bouquet"></span>
+														<span data-i18n="bouquet-luna"></span>
+													</li>
+													<li>
+														<span data-i18n="abv"></span>
+														<span data-i18n="abv-luna"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data aperitif">
+												<div class="empty"></div>
+												<span data-i18n="sparkling-shot-volume">
+													5 cl
+												</span>
+												<span>
+													22 BYN
+												</span>
+												<span data-i18n="champagne-bottle-volume">
+													75 cl
+												</span>
+												<span>
+													149 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
