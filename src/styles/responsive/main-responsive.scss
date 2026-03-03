@@ -180,9 +180,26 @@
 													.menu-title {
 														margin: calc(var(--index) * 1.5) 0;
 														padding-bottom: calc(var(--index) * 1.5);
-														border-bottom: 1px solid var(--color-main-60);
+														border-bottom: 1px solid;
+														border-image-slice: 1;
 														font-family: "SF Pro Display Thin",
 															sans-serif !important;
+
+														&.cocktail-list {
+															border-image-source: linear-gradient(to right, var(--color-main-60), #5A5455);
+														}
+
+														&.aperitif-list {
+															border-image-source: linear-gradient(to right, var(--color-main-60), #002C36);
+														}
+
+														&.wine-list {
+															border-image-source: linear-gradient(to right, var(--color-main-60), #5B1912);
+														}
+
+														&.spirits-list {
+															border-image-source: linear-gradient(to right, var(--color-main-60), #DF804A);
+														}
 													}
 
 													.menu-scroll-area {
@@ -248,7 +265,8 @@
 
 																	&#accordion-button-100,
 																	&#accordion-button-500,
-																	&#accordion-button-800 {
+																	&#accordion-button-800,
+																	&#accordion-button-2500 {
 																		margin: 0 0 calc(var(--index) * 1.5) 0;
 																	}
 
@@ -272,7 +290,9 @@
 																	&#accordion-button-2100,
 																	&#accordion-button-2200,
 																	&#accordion-button-2300,
-																	&#accordion-button-2400 {
+																	&#accordion-button-2400,
+																	&#accordion-button-2600,
+																	&#accordion-button-2700 {
 																		margin: calc(var(--index) * 1.5) 0;
 																	}
 																}
@@ -332,6 +352,18 @@
 																					}
 																				}
 																			}
+
+																			&.spirits {
+																				ul {
+																					li {
+																						grid-template-columns: 17.5% 1fr;
+
+																						.spirits__category {
+																							text-transform: none;
+																						}
+																					}
+																				}
+																			}
 																		}
 
 																		.data {
@@ -345,7 +377,12 @@
 																				font-size: 0.75rem;
 																			}
 
-																			&.aperitif {
+																			&.spirit {
+																				margin: 0 0 1.5rem 0;
+																			}
+
+																			&.aperitif,
+																			&.spirit {
 																				grid-template-columns: 10% 20% 20% 20% 20% 10%;
 
 																				&.ratings {
@@ -541,6 +578,56 @@
 																	.accordion-content {
 																		p {
 																			font-size: .85rem;
+																		}
+
+																		&.signature {
+																			.component-info {
+																				ul {
+																					li {
+																						span {
+																							&:nth-child(1) {
+																								margin: 0 10px 0 0;
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.ru {
+			main {
+				.container {
+					&.content {
+						.horizontal {
+							&.horizontal__pc {
+								.box {
+									.flip-inner {
+										.flip-face {
+											&.flip-back {
+												.info {
+													&.info--back {
+														.menu-scroll-area {
+															.accordion {
+																.accordion-item {
+																	.accordion-content {
+																		p {
+																			font-size: .7rem;
 																		}
 
 																		&.signature {

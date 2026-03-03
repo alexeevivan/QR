@@ -54,7 +54,7 @@
 							<button class="close-flip-btn js-close-flip">
 								&times;
 							</button>
-							<h3 class="menu-title" data-i18n="menu-cocktail"></h3>
+							<h3 class="menu-title cocktail-list" data-i18n="menu-cocktail"></h3>
 							<div class="menu-scroll-area">
 								<div class="accordion">
 									<div class="accordion-item">
@@ -2353,7 +2353,7 @@
 							<button class="close-flip-btn js-close-flip">
 								&times;
 							</button>
-							<h3 class="menu-title" data-i18n="menu-aperitif"></h3>
+							<h3 class="menu-title aperitif-list" data-i18n="menu-aperitif"></h3>
 							<div class="menu-scroll-area">
 								<div class="accordion">
 									<div class="accordion-item">
@@ -3006,7 +3006,7 @@
 							<button class="close-flip-btn js-close-flip">
 								&times;
 							</button>
-							<h3 class="menu-title" data-i18n="menu-wine"></h3>
+							<h3 class="menu-title wine-list" data-i18n="menu-wine"></h3>
 							<div class="menu-scroll-area">
 								<div class="accordion">
 									<div class="accordion-item">
@@ -5489,16 +5489,669 @@
 				</div>
 			</div>
 			<div class="box box__pc js-flip-container" id="spirits">
-				<div class="info">
-					<div class="info__description">
-						<h3 data-i18n="content-box-spirits">
-
-						</h3>
-						<span>
-							Lorem ipsum dolor sit amet.
-						</span>
+				<div class="flip-inner">
+					<div class="flip-face flip-front">
+						<div class="info js-open-flip">
+							<div class="info__description">
+								<h3 data-i18n="content-box-spirits"></h3>
+								<div class="info__content">
+									<p class="js-animate-in" id="callsign-wine"></p>
+								</div>
+								<span data-i18n="content-box-spirits-banner"></span>
+							</div>
+							<img src="../../assets/content/wines.png" alt="">
+							<div class="tap-icon">↻</div>
+						</div>
 					</div>
-					<div class="info__content">
+					<div class="flip-face flip-back">
+						<div class="info info--back">
+							<button class="close-flip-btn js-close-flip">
+								&times;
+							</button>
+							<h3 class="menu-title spirits-list" data-i18n="menu-spirits"></h3>
+							<div class="menu-scroll-area">
+								<div class="accordion">
+									<div class="accordion-item">
+										<button id="accordion-button-2500" class="accordion-btn--heading"
+											aria-expanded="false">
+											<span class="accordion-title zh" data-i18n="vodka-title"></span>
+										</button>
+										<div class="accordion-content">
+											<p class="accordion-content__category-description"
+												data-i18n="vodka-description">
+											</p>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-103" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Grey Goose
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-grey_goose"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-grey_goose"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													37 BYN
+												</span>
+												<span data-i18n="campari-bottle-volume"></span>
+												<span>
+													666 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-104" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Beluga. Transatlantic Racing
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-beluga"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-beluga"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													70 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume"></span>
+												<span>
+													882 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-105" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Absolut
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-absolut"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-absolut"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													15 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume"></span>
+												<span>
+													189 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-106" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Finlandia
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-finlandia"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-finlandia"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													15 BYN
+												</span>
+												<span data-i18n="campari-bottle-volume"></span>
+												<span>
+													270 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-106" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Bulbash №1
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-bulbash"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-bulbash"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													10 BYN
+												</span>
+												<span data-i18n="small-bottle-volume"></span>
+												<span>
+													90 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-2600" class="accordion-btn--heading"
+											aria-expanded="false">
+											<span class="accordion-title zh" data-i18n="gin-title"></span>
+										</button>
+										<div class="accordion-content">
+											<p class="accordion-content__category-description"
+												data-i18n="gin-description">
+											</p>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-107" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Hendrick's
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-hendricks"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-hendricks"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													33 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume"></span>
+												<span>
+													416 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-108" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Monkey 47
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-monkey"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-monkey"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													38 BYN
+												</span>
+												<span data-i18n="small-bottle-volume"></span>
+												<span>
+													342 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-109" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												The Botanist
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-botanist"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-botanist"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													45 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume"></span>
+												<span>
+													567 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-110" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Ukiyo Yuzu
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-ukiyo"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-ukiyo"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													40 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume"></span>
+												<span>
+													504 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-111" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Bombay Sapphire
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-bombay"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-bombay"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													27 BYN
+												</span>
+												<span data-i18n="campari-bottle-volume"></span>
+												<span>
+													486 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-112" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Gordon's
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-gordons"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-gordons"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													16 BYN
+												</span>
+												<span data-i18n="campari-bottle-volume"></span>
+												<span>
+													288 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-2700" class="accordion-btn--heading"
+											aria-expanded="false">
+											<span class="accordion-title zh" data-i18n="tequila-title"></span>
+										</button>
+										<div class="accordion-content">
+											<p class="accordion-content__category-description"
+												data-i18n="tequila-description">
+											</p>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-113" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Don Julio 1942
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-don_julio"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-don_julio"></span>
+													</li>
+													<li>
+														<span data-i18n="category"></span>
+														<span class="spirits__category"
+															data-i18n="category-don_julio"></span>
+													</li>
+													<li>
+														<span data-i18n="age"></span>
+														<span data-i18n="age-don_julio"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													200 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume"></span>
+												<span>
+													2520 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-114" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Patrón
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-patron"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-patron"></span>
+													</li>
+													<li>
+														<span data-i18n="category"></span>
+														<span class="spirits__category"
+															data-i18n="category-patron"></span>
+													</li>
+													<li>
+														<span data-i18n="age"></span>
+														<span data-i18n="age-patron"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													70 BYN
+												</span>
+												<span data-i18n="champagne-bottle-volume"></span>
+												<span>
+													882 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-115" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Herencia de Plata
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-herencia"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-herencia"></span>
+													</li>
+													<li>
+														<span data-i18n="category"></span>
+														<span class="spirits__category"
+															data-i18n="category-herencia"></span>
+													</li>
+													<li>
+														<span data-i18n="age"></span>
+														<span data-i18n="age-herencia"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													36 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume"></span>
+												<span>
+													454 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-116" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Olmeca
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-olmeca"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-olmeca"></span>
+													</li>
+													<li>
+														<span data-i18n="category"></span>
+														<span class="spirits__category"
+															data-i18n="category-olmeca"></span>
+													</li>
+													<li>
+														<span data-i18n="age"></span>
+														<span data-i18n="age-olmeca"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													20 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume"></span>
+												<span>
+													252 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<button id="accordion-button-117" class="accordion-btn--item"
+											aria-expanded="false">
+											<span class="accordion-title zh">
+												Contraluz Cristalino
+											</span>
+											<span class="accordion-category masterpieces">
+												20 BYN
+											</span>
+											<span class="icon" aria-hidden="true"></span>
+										</button>
+										<div class="accordion-content signature">
+											<p data-i18n="spirit-contraluz"></p>
+											<div class="component-info spirits">
+												<ul>
+													<li>
+														<span data-i18n="region"></span>
+														<span data-i18n="region-contraluz"></span>
+													</li>
+													<li>
+														<span data-i18n="category"></span>
+														<span class="spirits__category"
+															data-i18n="category-contraluz"></span>
+													</li>
+													<li>
+														<span data-i18n="age"></span>
+														<span data-i18n="age-contraluz"></span>
+													</li>
+												</ul>
+											</div>
+											<div class="data spirit">
+												<div class="empty"></div>
+												<span data-i18n="amaro-shot-volume"></span>
+												<span>
+													65 BYN
+												</span>
+												<span data-i18n="amaro-bottle-volume"></span>
+												<span>
+													819 BYN
+												</span>
+												<div class="empty"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
