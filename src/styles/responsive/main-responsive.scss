@@ -266,7 +266,12 @@
 																	&#accordion-button-1500,
 																	&#accordion-button-1600,
 																	&#accordion-button-1700,
-																	&#accordion-button-1800 {
+																	&#accordion-button-1800,
+																	&#accordion-button-1900,
+																	&#accordion-button-2000,
+																	&#accordion-button-2100,
+																	&#accordion-button-2200,
+																	&#accordion-button-2300 {
 																		margin: calc(var(--index) * 1.5) 0;
 																	}
 																}
@@ -371,6 +376,10 @@
 
 																							&.robert-parker {
 																								border-color: #0C6A56;
+																							}
+
+																							&.falstaff {
+																								border-color: var(--color-portal-to);
 																							}
 
 																							&.wine-enthusiast {
