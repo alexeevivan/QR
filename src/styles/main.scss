@@ -4,15 +4,6 @@ body {
 	text-align: center;
 	overflow-x: hidden;
 
-	:has(.info:hover) {
-
-		.info:not(:hover) {
-			filter: blur(5px);
-			opacity: 0.6;
-			transition: 0.4s ease;
-		}
-	}
-
 	&.zh {
 
 		h3,
@@ -280,15 +271,6 @@ body {
 									max-width: 100%;
 									bottom: 0;
 									z-index: 1;
-								}
-
-								// Ховер работает только на лицевой стороне
-								&:not(.info--back):hover {
-									background: linear-gradient(to top, var(--bg-card-hover), var(--bg-card));
-
-									img {
-										opacity: .25;
-									}
 								}
 
 							}
@@ -589,6 +571,22 @@ body {
 }
 
 @media (hover: hover) {
+	:has(.info:hover) {
+		.info:not(:hover) {
+			filter: blur(5px);
+			opacity: 0.6;
+			transition: 0.4s ease;
+		}
+	}
+
+	.info:not(.info--back):hover {
+		background: linear-gradient(to top, var(--bg-card-hover), var(--bg-card));
+
+		img {
+			opacity: .25;
+		}
+	}
+
 	.language-switcher {
 		button {
 			&:hover {
