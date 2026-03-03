@@ -592,6 +592,16 @@
 	}
 }
 
+@media (hover: none) {
+	.info:not(.info--back) {
+		background: linear-gradient(to top, var(--bg-card-hover), var(--bg-card));
+
+		img {
+			opacity: .25 !important;
+		}
+	}
+}
+
 @media (max-width: 1024px) {
 
 	/* 1. Отменяем жесткую высоту контейнера, которую ставит JS */

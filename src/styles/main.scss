@@ -583,7 +583,7 @@ body {
 		background: linear-gradient(to top, var(--bg-card-hover), var(--bg-card));
 
 		img {
-			opacity: .25;
+			opacity: .25 !important;
 		}
 	}
 
