@@ -52,6 +52,20 @@ const wineNames = [
 	"SAN PEDRO. 1865",
 ];
 
+const spiritsNames = [
+	"NIKKA",
+	"PATRÓN",
+	"HENNESSY",
+	"UKIYO YUZU",
+	"GLENFIDDICH",
+	"CONTRALUZ CRISTALINO",
+	"CHIVAS REGAL 25 Y.O.",
+	"ZACAPA CENTENARIO",
+	"DON JULIO 1942",
+	"THE MACALLAN",
+	"GREY GOOSE"
+];
+
 // ─── УНИВЕРСАЛЬНАЯ ФУНКЦИЯ АНИМАЦИИ ──────────────────────────────────────────
 
 /**
@@ -113,4 +127,9 @@ startNameAnimation(
 startNameAnimation(
 	document.querySelector("#callsign-wine"),
 	wineNames
+);
+
+startNameAnimation(
+	document.querySelector("#callsign-spirits"),
+	spiritsNames
 );

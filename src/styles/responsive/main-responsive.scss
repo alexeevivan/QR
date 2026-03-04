@@ -292,7 +292,18 @@
 																	&#accordion-button-2300,
 																	&#accordion-button-2400,
 																	&#accordion-button-2600,
-																	&#accordion-button-2700 {
+																	&#accordion-button-2700,
+																	&#accordion-button-2800,
+																	&#accordion-button-2900,
+																	&#accordion-button-3000,
+																	&#accordion-button-3100,
+																	&#accordion-button-3200,
+																	&#accordion-button-3300,
+																	&#accordion-button-3400,
+																	&#accordion-button-3500,
+																	&#accordion-button-3600,
+																	&#accordion-button-3700,
+																	&#accordion-button-3800 {
 																		margin: calc(var(--index) * 1.5) 0;
 																	}
 																}
@@ -358,11 +369,16 @@
 																					li {
 																						grid-template-columns: 17.5% 1fr;
 
-																						.spirits__category {
+																						.spirits__category,
+																						.spirits__age {
 																							text-transform: none;
 																						}
 																					}
 																				}
+																			}
+
+																			.component-info__text-regular {
+																				text-transform: none !important;
 																			}
 																		}
 
