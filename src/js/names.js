@@ -66,6 +66,27 @@ const spiritsNames = [
 	"GREY GOOSE"
 ];
 
+const softNames = [
+	"GARDENIST",
+	"LEMONADES",
+	"TEA BASED DRINKS",
+	"FRESHLY SQUEEZED JUICE",
+	"RED BULL",
+	"LIGHT UP",
+	"SMOOTHIE"
+];
+
+const coffeeNames = [
+	"RAF",
+	"MATCHA",
+	"DOPPIO",
+	"FLAT WHITE",
+	"LACTOSE FREE MILK",
+	"LATTE-MACHIATO",
+	"CAPPUCCINO",
+	"LUNGO",
+];
+
 // ─── УНИВЕРСАЛЬНАЯ ФУНКЦИЯ АНИМАЦИИ ──────────────────────────────────────────
 
 /**
@@ -132,4 +153,14 @@ startNameAnimation(
 startNameAnimation(
 	document.querySelector("#callsign-spirits"),
 	spiritsNames
+);
+
+startNameAnimation(
+	document.querySelector("#callsign-soft"),
+	softNames
+);
+
+startNameAnimation(
+	document.querySelector("#callsign-coffee"),
+	coffeeNames
 );

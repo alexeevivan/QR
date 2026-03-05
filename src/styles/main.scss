@@ -39,7 +39,19 @@ body {
 		display: flex;
 		gap: var(--index);
 		top: calc((var(--index) * 2));
-		right: calc((var(--index) * 2));
+		right: 0;
+		width: 100%;
+		padding: 0 calc(var(--index) * 2);
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		.btn-switcher {
+			width: 20%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
 
 		button {
 			border: 0 solid;
@@ -296,7 +308,7 @@ body {
 									margin-bottom: 20px;
 									color: var(--color-main);
 									border-bottom: 1px solid var(--color-main);
-									padding-bottom: 10px;
+									padding-bottom: 30px;
 									width: 100%;
 									text-align: center;
 								}
@@ -455,6 +467,7 @@ body {
 											display: flex;
 											flex-direction: row;
 											justify-content: center;
+											text-transform: uppercase;
 
 											.accordion-title {
 												text-align: center;
@@ -464,6 +477,52 @@ body {
 
 											.icon {
 												display: none;
+											}
+
+											&#accordion-button-100,
+											&#accordion-button-500,
+											&#accordion-button-800,
+											&#accordion-button-2500 {
+												margin: 0 0 calc(var(--index) * 1.5) 0;
+											}
+
+											&#accordion-button-200,
+											&#accordion-button-300,
+											&#accordion-button-400,
+											&#accordion-button-600,
+											&#accordion-button-700,
+											&#accordion-button-900,
+											&#accordion-button-1000,
+											&#accordion-button-1100,
+											&#accordion-button-1200,
+											&#accordion-button-1300,
+											&#accordion-button-1400,
+											&#accordion-button-1500,
+											&#accordion-button-1600,
+											&#accordion-button-1700,
+											&#accordion-button-1800,
+											&#accordion-button-1900,
+											&#accordion-button-2000,
+											&#accordion-button-2100,
+											&#accordion-button-2200,
+											&#accordion-button-2300,
+											&#accordion-button-2400,
+											&#accordion-button-2600,
+											&#accordion-button-2700,
+											&#accordion-button-2800,
+											&#accordion-button-2900,
+											&#accordion-button-3000,
+											&#accordion-button-3100,
+											&#accordion-button-3200,
+											&#accordion-button-3300,
+											&#accordion-button-3400,
+											&#accordion-button-3500,
+											&#accordion-button-3600,
+											&#accordion-button-3700,
+											&#accordion-button-3800,
+											&#accordion-button-3900,
+											&#accordion-button-4000 {
+												margin: calc(var(--index) * 1) 0;
 											}
 										}
 
@@ -477,8 +536,94 @@ body {
 											p {
 												font-size: 1rem;
 												font-weight: 300;
-												margin: 1em 0;
-												text-align: start;
+												margin: calc(var(--index) * 1) 0 calc(var(--index) * 1) 0;
+												text-align: justify;
+											}
+
+											.component-info {
+												ul {
+													text-align: left;
+
+													li {
+														display: grid;
+														grid-template-columns: 20% 1fr;
+														font-size: 1rem;
+
+														span {
+															text-transform: capitalize;
+
+															&.spirits__age {
+																text-transform: none;
+															}
+														}
+													}
+												}
+											}
+
+											.data {
+												display: grid;
+												grid-template-columns: 10% 20% 20% 20% 20% 20% 10%;
+												font-size: 1rem;
+												margin: 1rem 0 var(--index) 0;
+
+												&.aperitif {
+													grid-template-columns: 10% 20% 20% 20% 20% 10%;
+												}
+
+												&.ratings {
+													grid-template-columns: 50% 20% 20% 10%;
+
+													.ratings__data {
+														display: flex;
+														flex-direction: row;
+														justify-content: space-evenly;
+
+														.rating {
+															max-width: 75%;
+															border: .5px solid;
+															border-radius: 6px;
+															font-family: "Inter";
+															padding: 4px 12px 4px 12px;
+															text-transform: uppercase;
+															display: inline-flex;
+															text-align: center;
+															max-width: 80%;
+
+															&.wine-spectator {
+																border-color: var(--color-vintage);
+															}
+
+															&.robert-parker {
+																border-color: #0C6A56;
+															}
+
+															&.falstaff {
+																border-color: var(--color-portal-to);
+															}
+
+															&.wine-enthusiast {
+																border-color: #617d8b;
+															}
+
+															&.james-suckling {
+																border-color: #b11a12;
+															}
+
+															&.vivino {
+																border-color: #BA1628;
+															}
+
+															&.empty {
+																display: none;
+															}
+														}
+													}
+												}
+
+												span {
+													display: inline-flex;
+													align-items: center;
+												}
 											}
 										}
 									}
@@ -530,6 +675,32 @@ body {
 	}
 }
 
+html {
+	&.light {
+		body {
+			main {
+				.container {
+					&.content {
+						.horizontal {
+							&.horizontal__pc {
+								.box {
+									.info {
+										img {
+											&.dark-mode {
+												filter: invert(1);
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @keyframes animate-in {
 	from {
 		transform: translateY(50px);
@@ -569,6 +740,41 @@ body {
 		background-size: 300% 300%;
 	}
 }
+
+// @media (hover: hover) {
+// 	:has(.info:hover) {
+// 		.info:not(:hover) {
+// 			filter: blur(5px);
+// 			opacity: 0.6;
+// 			transition: 0.4s ease;
+// 		}
+// 	}
+
+// 	.info:not(.info--back):hover {
+// 		background: linear-gradient(to top, var(--bg-card-hover), var(--bg-card));
+
+// 		img {
+// 			opacity: .25 !important;
+// 		}
+// 	}
+
+// 	.language-switcher {
+// 		button {
+// 			&:hover {
+// 				border: 0px solid;
+// 				border-radius: 50%;
+// 				box-shadow: inset 0 0 10px var(--color-main-60), 0 0 20px var(--color-main-60);
+// 				outline-color: var(--color-main-00);
+// 				outline-offset: calc(var(--index) * 0.5);
+// 				text-shadow: 1px 1px 2px var(--bg-dark);
+
+// 				&:active {
+// 					transform: scale(0.7);
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
 @media (hover: hover) {
 	:has(.info:hover) {

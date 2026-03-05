@@ -1,6 +1,10 @@
 @media screen and (max-width: 1024px) {
 	body {
 		.language-switcher {
+			.btn-switcher {
+				width: 40%;
+			}
+
 			button:active {
 				border-radius: 50%;
 				box-shadow: inset 0 0 10px var(--color-main-60), 0 0 20px var(--color-main-60);
@@ -200,6 +204,10 @@
 														&.spirits-list {
 															border-image-source: linear-gradient(to right, var(--color-main-60), #DF804A);
 														}
+
+														&.soft-list {
+															border-image-source: linear-gradient(to right, var(--color-main-60), #D3C19B);
+														}
 													}
 
 													.menu-scroll-area {
@@ -266,7 +274,9 @@
 																	&#accordion-button-100,
 																	&#accordion-button-500,
 																	&#accordion-button-800,
-																	&#accordion-button-2500 {
+																	&#accordion-button-2500,
+																	&#accordion-button-4200,
+																	&#accordion-button-5000 {
 																		margin: 0 0 calc(var(--index) * 1.5) 0;
 																	}
 
@@ -305,7 +315,16 @@
 																	&#accordion-button-3700,
 																	&#accordion-button-3800,
 																	&#accordion-button-3900,
-																	&#accordion-button-4000 {
+																	&#accordion-button-4000,
+																	&#accordion-button-4300,
+																	&#accordion-button-4400,
+																	&#accordion-button-4500,
+																	&#accordion-button-4600,
+																	&#accordion-button-4700,
+																	&#accordion-button-4800,
+																	&#accordion-button-4900,
+																	&#accordion-button-5100,
+																	&#accordion-button-5200 {
 																		margin: calc(var(--index) * 1.5) 0;
 																	}
 																}
@@ -314,6 +333,7 @@
 																	p {
 																		font-family: "Inter";
 																		font-size: 0.75rem;
+																		margin: 1rem 0;
 																	}
 
 																	.accordion-content__category-description {
@@ -327,11 +347,19 @@
 
 																		p {
 																			text-align: justify;
+
+																			&.beer__empty {
+																				display: none;
+																			}
 																		}
 
 																		.component-info {
 																			display: flex;
 																			margin: 0 0 1rem 0;
+
+																			&.beer {
+																				margin: 1rem 0;
+																			}
 
 																			ul {
 																				display: inline-flex;
@@ -387,7 +415,7 @@
 																		.data {
 																			display: grid;
 																			grid-template-columns: 60% 20% 20%;
-																			margin: 0.75rem 0 1.5rem 0;
+																			margin: 0 0 1rem 0;
 																			align-items: center;
 
 																			span {
@@ -457,6 +485,16 @@
 																					}
 																				}
 																			}
+
+																			&.bottle {
+																				grid-template-columns: 50% 20% 20% 10%;
+																			}
+																		}
+																	}
+
+																	&.soft-drink {
+																		.data {
+																			margin: 1rem 0;
 																		}
 																	}
 
@@ -707,16 +745,6 @@
 	}
 }
 
-@media (hover: none) {
-	.info:not(.info--back) {
-		background: linear-gradient(to top, var(--bg-card-hover), var(--bg-card));
-
-		img {
-			opacity: .25 !important;
-		}
-	}
-}
-
 @media (max-width: 1024px) {
 
 	/* 1. Отменяем жесткую высоту контейнера, которую ставит JS */
@@ -758,5 +786,40 @@
 		scroll-snap-align: center;
 		/* Центрируем при остановке */
 		margin-right: 15px;
+	}
+}
+
+@media (hover: none) {
+
+	/* Отключаем все hover-эффекты на тач-устройствах */
+	.info:not(.info--back):hover {
+		background: transparent;
+
+		img {
+			opacity: 0;
+		}
+	}
+
+	:has(.info:hover) {
+		.info:not(:hover) {
+			filter: none;
+			opacity: 1;
+		}
+	}
+
+	.info:not(.info--back) {
+		background: linear-gradient(to top, var(--bg-card-hover), var(--bg-card));
+
+		img {
+			opacity: .25 !important;
+		}
+	}
+
+	.language-switcher button:hover {
+		box-shadow: none;
+		outline-color: var(--color-main);
+		outline-offset: 0;
+		text-shadow: none;
+		border-radius: 2px;
 	}
 }

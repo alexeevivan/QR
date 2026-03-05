@@ -9,10 +9,12 @@ import '../styles/main.scss';
 import '../styles/_null.scss';
 import '../styles/_fonts.scss';
 import '../styles/_header.scss';
+import '../styles/_light-theme.scss';
 import '../styles/responsive/main-responsive.scss';
 import { initLanguage } from './translation.js';
 import './sticky.js';
 import './names.js';
+import './theme.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 	// 1. Активируем необходимые плагины GSAP
