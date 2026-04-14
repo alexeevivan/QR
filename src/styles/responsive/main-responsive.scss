@@ -85,6 +85,7 @@
 							.box {
 								min-width: 100vw;
 								min-height: 90vh;
+								min-height: 90dvh;
 								display: flex;
 								justify-content: center;
 								align-items: center;
@@ -92,6 +93,7 @@
 								color: var(--color-main);
 								padding: calc(var(--index) * 1.5);
 								margin: 10vh 0 0 0;
+								margin: 10dvh 0 0 0;
 
 								.info {
 									position: relative;
@@ -178,7 +180,13 @@
 
 								.flip-inner {
 									.flip-face {
+										height: 100%;
+										top: 0;
+
 										&.flip-back {
+											height: 100%;
+											top: 0;
+
 											.info {
 												&.info--back {
 													.menu-title {
@@ -581,6 +589,7 @@
 				&.greeting {
 					.section {
 						height: 100vh;
+						height: 100dvh;
 						min-width: 100vw;
 
 						.text-container {
@@ -779,6 +788,7 @@
 		min-width: 85vw;
 		/* Карточка почти во весь экран */
 		height: 70vh;
+		height: 70dvh;
 		/* Высота поменьше */
 		flex-shrink: 0;
 		/* Чтобы не сжимались */

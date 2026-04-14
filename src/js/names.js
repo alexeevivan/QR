@@ -1,4 +1,4 @@
-// names.js — универсальная анимация названий для любого бокса
+// names.js — оптимизированная анимация названий
 
 const DELAY = 2500;
 const ANIMATE_IN_DURATION = 500;
@@ -31,7 +31,7 @@ const aperitifNames = [
 	"Jägermeister",
 	"D.O.M. PÉRIGNON",
 	"martini vermouth",
-	"WOLFBERGER CRÉMANT D’ALSACE BRUT ROSÉ",
+	"WOLFBERGER CRÉMANT D'ALSACE BRUT ROSÉ",
 	"VEUVE CLICQUOT PONSARDIN",
 	"MOЁT & CHANDON IMPÉRIAL",
 	"MARTINI. ASTI",
@@ -87,80 +87,93 @@ const coffeeNames = [
 	"LUNGO",
 ];
 
-// ─── УНИВЕРСАЛЬНАЯ ФУНКЦИЯ АНИМАЦИИ ──────────────────────────────────────────
+// ─── ОПТИМИЗИРОВАННАЯ ФУНКЦИЯ АНИМАЦИИ ───────────────────────────────────────
 
 /**
  * Запускает цикличную анимацию смены названий для одного элемента.
+ * Использует один интервал вместо множества setTimeout.
  * @param {HTMLElement} el     - элемент, в котором меняется текст
  * @param {string[]}    names  - массив названий
  */
 function startNameAnimation(el, names) {
 	if (!el || !names.length) return;
 
-	function replaceText(i) {
-		setTimeout(() => {
-			el.innerText = names[i];
-		}, DELAY * i);
-	}
+	let currentIndex = 0;
+	let animationPhase = 'in';
+	let phaseStartTime = Date.now();
+	let textUpdated = false;
 
-	function animateIn(i) {
-		setTimeout(() => {
-			el.className = "js-animate-in";
-		}, DELAY * i);
+	function updateAnimation() {
+		const elapsed = Date.now() - phaseStartTime;
 
-		if (i !== 0) {
-			setTimeout(() => {
-				el.className = "";
-			}, DELAY * i - (DELAY - ANIMATE_IN_DURATION));
+		switch (animationPhase) {
+			case 'in':
+				if (!textUpdated) {
+					el.textContent = names[currentIndex];
+					el.className = 'js-animate-in';
+					textUpdated = true;
+				}
+				if (elapsed >= ANIMATE_IN_DURATION) {
+					animationPhase = 'show';
+					phaseStartTime = Date.now();
+					el.className = '';
+				}
+				break;
+
+			case 'show':
+				if (elapsed >= DELAY - ANIMATE_IN_DURATION - ANIMATE_OUT_DURATION) {
+					animationPhase = 'out';
+					phaseStartTime = Date.now();
+				}
+				break;
+
+			case 'out':
+				if (elapsed === 0) {
+					el.className = 'js-animate-out';
+				}
+				if (elapsed >= ANIMATE_OUT_DURATION) {
+					currentIndex = (currentIndex + 1) % names.length;
+					animationPhase = 'in';
+					phaseStartTime = Date.now();
+					textUpdated = false;
+				}
+				break;
 		}
 	}
 
-	function animateOut(i) {
-		setTimeout(() => {
-			el.className = "js-animate-out";
-		}, DELAY * i + (DELAY - ANIMATE_OUT_DURATION));
-	}
-
-	function animate() {
-		for (let i = 0; i < names.length; i++) {
-			replaceText(i);
-			animateIn(i);
-			animateOut(i);
-		}
-	}
-
-	animate();
-	setInterval(animate, DELAY * names.length);
+	setInterval(updateAnimation, 16);
 }
 
 // ─── ЗАПУСК ДЛЯ КАЖДОГО БОКСА ────────────────────────────────────────────────
 
-startNameAnimation(
-	document.querySelector("#callsign"),
-	cocktailNames
-);
+document.addEventListener('DOMContentLoaded', () => {
+	startNameAnimation(
+		document.querySelector("#callsign"),
+		cocktailNames
+	);
 
-startNameAnimation(
-	document.querySelector("#callsign-aperitif"),
-	aperitifNames
-);
+	startNameAnimation(
+		document.querySelector("#callsign-aperitif"),
+		aperitifNames
+	);
 
-startNameAnimation(
-	document.querySelector("#callsign-wine"),
-	wineNames
-);
+	startNameAnimation(
+		document.querySelector("#callsign-wine"),
+		wineNames
+	);
 
-startNameAnimation(
-	document.querySelector("#callsign-spirits"),
-	spiritsNames
-);
+	startNameAnimation(
+		document.querySelector("#callsign-spirits"),
+		spiritsNames
+	);
 
-startNameAnimation(
-	document.querySelector("#callsign-soft"),
-	softNames
-);
+	startNameAnimation(
+		document.querySelector("#callsign-soft"),
+		softNames
+	);
 
-startNameAnimation(
-	document.querySelector("#callsign-coffee"),
-	coffeeNames
-);
+	startNameAnimation(
+		document.querySelector("#callsign-coffee"),
+		coffeeNames
+	);
+});

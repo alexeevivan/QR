@@ -3,7 +3,6 @@ import gsap from "./_vendors/gsap.min.js";
 import MotionPathPlugin from "./_vendors/MotionPathPlugin.min.js";
 import ScrollTrigger from "./_vendors/ScrollTrigger.min.js";
 import ScrollSmoother from "./_vendors/ScrollSmoother.min.js";
-import * as $ from "jquery";
 
 import '../styles/main.scss';
 import '../styles/_null.scss';
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			};
 			splash.addEventListener("transitionend", removeAfterTransition, { once: true });
 			setTimeout(removeAfterTransition, 700);
-		}, 200);
+		}, 2000); // 2 секунды показа заставки
 	}
 
 	initScrollAnimation();
@@ -59,8 +58,8 @@ function initScrollAnimation() {
 	const animDurationPC = '+=1500vh';
 	const animDurationMobile = '+=1000vh'; // На мобилке можно сделать покороче
 
-	// === 1. ДЕСКТОП ( > 600px ) ===
-	mm.add("(min-width: 601px)", () => {
+	// === 1. ДЕСКТОП ( > 1024px ) ===
+	mm.add("(min-width: 1025px)", () => {
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: greetingContainer,
@@ -93,8 +92,8 @@ function initScrollAnimation() {
 		);
 	});
 
-	// === 2. МОБИЛЬНЫЕ ( <= 600px ) ===
-	mm.add("(max-width: 600px)", () => {
+	// === 2. МОБИЛЬНЫЕ И ПЛАНШЕТЫ ( <= 1024px ) ===
+	mm.add("(max-width: 1024px)", () => {
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: greetingContainer,
