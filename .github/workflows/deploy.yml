@@ -40,16 +40,15 @@ jobs:
       - name: Build for Beijing Hotel site
         run: PUBLIC_PATH=/qr/ npm run build
 
-      - name: Deploy to Beijing Hotel via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: Deploy to Beijing Hotel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          port: 22
-          local_path: './dist/*'
-          remote_path: '/home/host3007/public_html/qr'
-          sftp_only: false
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./dist/
+          server-dir: ./qr/
 
   deploy-github-pages:
     environment:
