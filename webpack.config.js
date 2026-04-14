@@ -34,6 +34,7 @@ module.exports = {
 	output: {
 		filename: "js/[name].[contenthash].js",
 		path: path.resolve(__dirname, "dist"),
+		publicPath: process.env.PUBLIC_PATH || "/",
 		clean: true,
 	},
 	optimization: optimization(),

@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages and SFTP
 
 on:
   push:
@@ -29,15 +29,30 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build for GitHub Pages
         run: npm run build
 
-      - name: Upload artifact
+      - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
-  deploy:
+      - name: Build for Beijing Hotel site
+        run: PUBLIC_PATH=/qr/ npm run build
+
+      - name: Deploy to Beijing Hotel via SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          protocol: sftp
+          port: 22
+          local-dir: ./dist/
+          server-dir: /home/host3007/public_html/qr/
+          dangerous-clean-slate: false
+
+  deploy-github-pages:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
