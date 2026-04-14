@@ -145,12 +145,40 @@ npm start
 ```bash
 npm run build
 ```
-Результат в папке `docs/`
+Результат в папке `dist/`
 
-### Деплой на GitHub Pages:
+## 🚀 Автоматический деплой
+
+Проект настроен на автоматический деплой через **GitHub Actions** при каждом push в ветку `main`.
+
+### Куда деплоится:
+1. **GitHub Pages:** [https://alexeevivan.github.io/QR/](https://alexeevivan.github.io/QR/)
+2. **Сайт отеля:** [https://beijinghotelminsk.com/qr/](https://beijinghotelminsk.com/qr/)
+
+### Как это работает:
+
+При каждом `git push origin main`:
+1. GitHub Actions автоматически запускает workflow (`.github/workflows/deploy.yml`)
+2. Устанавливает зависимости (`npm ci`)
+3. Собирает проект дважды:
+   - Для GitHub Pages (с путями от корня `/`)
+   - Для сайта отеля (с путями `/qr/`)
+4. Деплоит на оба сайта одновременно:
+   - GitHub Pages через `actions/deploy-pages`
+   - Сайт отеля через FTP (`SamKirkland/FTP-Deploy-Action`)
+
+### Настройка секретов:
+
+В репозитории настроены GitHub Secrets для FTP-доступа:
+- `FTP_HOST` - хост FTP-сервера
+- `FTP_USERNAME` - логин FTP
+- `FTP_PASSWORD` - пароль FTP
+
+### Ручной деплой (устаревший способ):
 ```bash
 npm run deploy
 ```
+Использует `gh-pages` пакет для деплоя только на GitHub Pages.
 
 ## 📁 Структура проекта
 
