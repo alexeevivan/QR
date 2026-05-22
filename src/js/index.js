@@ -55,7 +55,7 @@ function initScrollAnimation() {
 	let mm = gsap.matchMedia();
 
 	// Длина скролла (можно настроить по-разному для мобилки и пк)
-	const animDurationPC = '+=1500vh';
+	const animDurationPC = '+=600vh';
 	const animDurationMobile = '+=1000vh'; // На мобилке можно сделать покороче
 
 	// === 1. ДЕСКТОП ( > 1024px ) ===

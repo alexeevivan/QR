@@ -752,16 +752,15 @@
 
 				&.content {
 					.horizontal {
-						&.horizontal__pc {
-							.box {
-								.info {
-									img {
-										opacity: 0;
-										transition: opacity 0.6s ease, transform 0.6s ease;
-									}
+					&.horizontal__pc {
+						.box {
+							.info {
+								img {
+									opacity: 0.25;
 								}
 							}
 						}
+					}
 					}
 				}
 			}
@@ -784,12 +783,6 @@
 
 				&::before {
 					opacity: 1;
-				}
-
-				img {
-					opacity: 0.3 !important;
-					transition: opacity 0.6s ease, transform 0.6s ease !important;
-					transform: scale(1.05);
 				}
 			}
 
