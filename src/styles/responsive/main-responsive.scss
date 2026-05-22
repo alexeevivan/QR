@@ -749,6 +749,65 @@
 						}
 					}
 				}
+
+				&.content {
+					.horizontal {
+						&.horizontal__pc {
+							.box {
+								.info {
+									img {
+										opacity: 0;
+										transition: opacity 0.6s ease, transform 0.6s ease;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		// Hover-эффекты только для десктопа
+		@media (hover: hover) {
+			:has(.info:hover) {
+				.info:not(:hover) {
+					filter: blur(5px);
+					opacity: 0.6;
+					transition: 0.4s ease;
+				}
+			}
+
+			.info:not(.info--back):hover {
+				background: linear-gradient(135deg, var(--bg-card-hover), var(--bg-card));
+				transition: background 0.8s ease;
+				transform: translateY(-5px);
+
+				&::before {
+					opacity: 1;
+				}
+
+				img {
+					opacity: 0.3 !important;
+					transition: opacity 0.6s ease, transform 0.6s ease !important;
+					transform: scale(1.05);
+				}
+			}
+
+			.language-switcher {
+				button {
+					&:hover {
+						border: 0px solid;
+						border-radius: 50%;
+						box-shadow: inset 0 0 10px var(--color-main-60), 0 0 20px var(--color-main-60);
+						outline-color: var(--color-main-00);
+						outline-offset: calc(var(--index) * 0.5);
+						text-shadow: 1px 1px 2px var(--bg-dark);
+
+						&:active {
+							transform: scale(0.7);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -797,39 +856,13 @@
 		/* Центрируем при остановке */
 		margin-right: 15px;
 	}
-}
 
-@media (hover: none) {
-
-	/* Отключаем все hover-эффекты на тач-устройствах */
-	.info:not(.info--back):hover {
-		background: transparent;
-
-		img {
-			opacity: 0;
-		}
-	}
-
-	:has(.info:hover) {
-		.info:not(:hover) {
-			filter: none;
-			opacity: 1;
-		}
-	}
-
+	/* 5. Статичное отображение для мобильных - без hover-эффектов */
 	.info:not(.info--back) {
 		background: linear-gradient(to top, var(--bg-card-hover), var(--bg-card));
 
 		img {
 			opacity: .25 !important;
 		}
-	}
-
-	.language-switcher button:hover {
-		box-shadow: none;
-		outline-color: var(--color-main);
-		outline-offset: 0;
-		text-shadow: none;
-		border-radius: 2px;
 	}
 }
