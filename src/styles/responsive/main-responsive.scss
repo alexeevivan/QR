@@ -422,7 +422,7 @@
 
 																		.data {
 																			display: grid;
-																			grid-template-columns: 60% 20% 20%;
+																			grid-template-columns: 20% 20% 60%;
 																			margin: 0 0 1rem 0;
 																			align-items: center;
 
@@ -752,15 +752,15 @@
 
 				&.content {
 					.horizontal {
-					&.horizontal__pc {
-						.box {
-							.info {
-								img {
-									opacity: 0.25;
+						&.horizontal__pc {
+							.box {
+								.info {
+									img {
+										opacity: 0.25;
+									}
 								}
 							}
 						}
-					}
 					}
 				}
 			}
